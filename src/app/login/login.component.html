@@ -12,25 +12,27 @@
                                     <!-- <h3 class="text-center text-info">Login</h3> -->
                                     <div class="form-group">
                                         <label for="username" class="text-dark font-weight-bold">Username:</label><br>
-                                        <input type="text" name="username" id="username" required="" name="usr" class="form-control" [(ngModel)]="username"
-                                        required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,3})$" #userName = "ngModel">
+                                        <input type="text" name="username" id="username" required="" name="usr" class="form-control" [(ngModel)]="username" #userName = "ngModel">
                                     </div>
-                                    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
-                                      Please Enter a valid email.</div>
+                                    <div *ngIf="userName.touched && userName.invalid" class="alert alert-danger">
+                                      must be filled</div>
 
 
                                     <div class="form-group">
                                         <label for="password" class="text-dark font-weight-bold">Password:</label><br>
                                         <input type="password" name="password" id="password" name="pass" required="" class="form-control" [(ngModel)]="password" #pass="ngModel">
-                                        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
-                                            Please Enter your password</div>
+                                        <div *ngIf="pass.touched && pass.invalid" class="alert alert-danger">
+                                            must be filled</div>
                                     </div>
-                                    <p class="text-center text-danger"><small>{{errorMessage}}</small></p>
+
                                     <div class="form-group">
-                                        <div *ngIf="(pass.touched) && ( userName.touched)">
+                                        <div *ngIf="(userName.dirty) && (pass.dirty)">
                                       <input type="submit" name="submit" class="btn btn-primary btn-md" value="Login" (click)="logIn()">
                                       </div>
                                     </div>
+
+                                    <p class="text-center text-danger"><small>{{msg}}</small></p>
+
                                 </form>
                             </div>
                         </div>

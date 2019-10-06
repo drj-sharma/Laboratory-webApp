@@ -11,7 +11,45 @@ app.use(function (req, res, next) {
   next();
  });
 
+
+//Signup schema & model
+var SignupSchema = new mongoose.Schema(
+  {
+    Name: String,
+    Username: String,
+    Password: String
+  },
+  {
+    versionKey: false
+  }
+);
+var Signup = mongoose.model("signup", SignupSchema,"signup");
+
+
+app.post("/api/login", function(req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+  console.log(req.body);
+
+  Signup.find({ Username:req.body._name,Password:req.body._pass}, function(err, data)
+  {
+  if (err)
+  {
+  console.log(err);
+  res.send(err);
+  }
+  else
+  {
+  console.log(data);
+  res.send(data);
+  }
+  mongoose.connection.close();
+ });
+});
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 })
+
+
+
 
