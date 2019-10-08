@@ -8,18 +8,24 @@ import * as $ from 'jquery';
 })
 export class MainComponent implements OnInit {
   d = new Date();
+  pName: string;
+  spec: string;
+  gen = '';
+  srnum: number;
+  drName: string;
 
   constructor() { }
 
-  public ngOnInit() {       // JQuery
+  ngOnInit() {       // JQuery
     const action = 'click';
     const speed = '500';
 
+    // tslint:disable-next-line: deprecation
     $(document).ready(() =>  {
       $('li.q').on(action , function() {
         $(this).next()
           .slideToggle(speed)
-            .siblings('li.a')
+            .siblings('.cont_a')
               .slideUp();
         const img = $(this).children('img');
         $('img').not(img).removeClass('rotate');
