@@ -1,13 +1,160 @@
-<!-- Simple Navbar -->
 <nav>
   <ul>
     <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a routerLink="#newPatient">New Patient Details</a></li>
+    <li><a href="#">Edit Patient Details</a></li>
+    <li><a href="#">Search Patient Details</a></li>
+    <li><a href="#">All Patient Details</a></li>
+    <li><a href="#">About Admin</a></li>
   </ul>
 </nav>
 
-<section id="showcase"></section>
+<section id="showcase">
+</section>
+
+
+
+<div id="newPatient">
+    <header class="jumbotron">
+        <h1 class="text-center display-3" > Patient's Details </h1>
+    </header>
+    <br>
+    <div class="marginBody">
+   <p id="alginRight" ><strong> Date: </strong> {{d | date}}</p>
+
+
+    <div class="container">
+        <form id="survey-form">
+            <div class="form-group d-flex">
+            <h5>  <label for="patient"> <strong> Name: </strong>&nbsp;</label></h5>
+                <input class="form-control" id="patient" type="text" id="name" placeholder="Patient's Name">
+            </div>
+<br>
+            <div class="form-group d-flex">
+                <h5>  <label for="gender"> <strong> Gender: </strong>&nbsp;</label></h5>
+                <select class="form-control  inputSame" id="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+<br>
+            <div class="form-group d-flex">
+                <h5>  <label for="specimen"> <strong>Specimen: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="specimen" type="text" id="name" placeholder="Enter Specimen">
+                </div>
+<br>
+
+            <div class="form-group d-flex">
+                <h5>  <label for="srno"> <strong>Sr. No: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="srno" type="text" id="name" placeholder="Enter Sr. No.">
+                </div>
+            <br>
+            <div class="form-group d-flex">
+                <h5>  <label for="refDr"> <strong>Ref. By Dr: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="refDr" type="text" id="name" placeholder="Dr. Name">
+                </div>
+            <br>
+
+
+            <!-- BUTTON: SUBMIT -->
+            <button class="btn btn-success mb-5 btn-lg" id="submit">
+                Submit
+            </button>
+            <br>
+
+
+        </form>
+        </div>
+</div>
+</div>
+
+
+<div id="container">
+    <ul class="faq">
+        <li class="q"><img src="../../assets/arrow.png"> HEAMATOLOGICAL REPORT</li>
+        <div class="cont_a">
+            <form action="/action_page.php">
+                Heamoglobin: <input type="text" name="ele1"><br>
+                T.L.C: <input type="text" name="ele2"><br>
+                D.L.C: <input type="text" name="ele3"><br>
+                Neutrophils: <input type="text" name="ele4"><br>
+                Lymphocytes: <input type="text" name="ele5"><br>
+                Monocytes: <input type="text" name="ele6"><br>
+                Eosinophills: <input type="text" name="ele7"><br>
+                Basophils: <input type="text" name="ele8"><br>
+                M.P Card: <input type="text" name="ele9"><br>
+                E.S.R: <input type="text" name="ele10"><br>
+                R.B.C. Count: <input type="text" name="ele11"><br>
+                Platelet Count: <input type="text" name="ele12"><br>
+                Absoulte Eosinophills: <input type="text" name="ele13"><br>
+                Bleeding Time: <input type="text" name="ele14"><br>
+                Coagulation Time:<input type="text" name="ele15"><br>
+                Blood Group: <input type="text" name="ele16"><br>
+                Sputum for AFB: <input type="text" name="ele17"><br>
+                <input type="submit" value="Submit" class="sub">
+            </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> URINE EXAMINATION REPORT</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    Blood Glucose Fasting: <input type="text" name="ele1"><br>
+                    Blood Glucose (PP): <input type="text" name="ele2"><br>
+                    Blood Glucose Random: <input type="text" name="ele3"><br>
+                    <input type="submit" value="Submit" class="sub">
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> LIQUID PROFILE</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    S. Cholesrerol: <input type="text" name="ele1"><br>
+                    S. HDL Cholesrerol: <input type="text" name="ele2"><br>
+                    S. VLDL Cholesrerol: <input type="text" name="ele3"><br>
+                    S. LDL Cholesrerol: <input type="text" name="ele4"><br>
+                    S. Triglycerides: <input type="text" name="ele5"><br>
+                    S. Chol HDL Ratio: <input type="text" name="ele6"><br>
+                    S. LDL HDL Ratio: <input type="text" name="ele7"><br>
+                    <input type="submit" value="Submit" class="sub">
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> LIVER FUNCTION TEST</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    Serum G.O.t(AST): <input type="text" name="ele1"><br>
+                    Serum G.P.T(ALT): <input type="text" name="ele2"><br>
+                    Total S. Bilirubin: <input type="text" name="ele3"><br>
+                    Direct: <input type="text" name="ele4"><br>
+                    Indirect: <input type="text" name="ele5"><br>
+                    S. Alk Phosphatase: <input type="text" name="ele6"><br>
+                    S. Total Proteins: <input type="text" name="ele7"><br>
+                    Albumin: <input type="text" name="ele8"><br>
+                    Globulin: <input type="text" name="ele9"><br>
+                    AG Ratio: <input type="text" name="ele10"><br>
+                    <input type="submit" value="Submit" class="sub">
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> RENAL FUNCTION TEST</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    Blood Urea: <input type="text" name="ele1"><br>
+                    S. Creatinine: <input type="text" name="ele2"><br>
+                    S. Uric Acid: <input type="text" name="ele3"><br>
+                    S. Phosphorus: <input type="text" name="ele4"><br>
+                    S. Calcium: <input type="text" name="ele5"><br>
+                    S. Magnesium: <input type="text" name="ele6"><br>
+                    <input type="submit" value="Submit" class="sub">
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> SERUM ELECTROLYTES</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    S. Sodium: <input type="text" name="ele1"><br>
+                    S. Potassium: <input type="text" name="ele2"><br>
+                    Magnesium: <input type="text" name="ele3"><br>
+                    Phosphorus: <input type="text" name="ele4"><br>
+                    S. Calcium: <input type="text" name="ele5"><br>
+                    Chloride: <input type="text" name="ele6"><br>
+                    <input type="submit" value="Submit" class="sub">
+                </form>
+        </div>
+    </ul>
+</div>
