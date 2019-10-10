@@ -1,6 +1,6 @@
-const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
+var express = require("express");
+var app = express();
+var mongoose = require("mongoose");
 
 // for CORS
 app.use(function (req, res, next) {
@@ -24,6 +24,28 @@ var SignupSchema = new mongoose.Schema(
   }
 );
 var Signup = mongoose.model("signup", SignupSchema,"signup");
+
+
+app.post("/api/signup", function(req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+
+  var newsignup = new Signup(
+    {
+     Name:req.body.name,
+     Username: req.body.username,
+     Password: req.body.password
+     });
+
+  newsignup.save(function(err) {
+  if (err) {
+     console.log(err);
+     res.send("Error while signing up!");
+     } else {
+     res.send("Signup Successful");
+ }
+  mongoose.connection.close();
+  });
+ });
 
 
 app.post("/api/login", function(req, res) {
