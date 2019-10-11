@@ -25,14 +25,14 @@
         <form id="survey-form">
             <div class="form-group d-flex">
             <h5>  <label for="patient" class="l1"> <strong> Name: </strong>&nbsp;</label></h5>
-                <input class="form-control" id="patient" type="text" id="name" placeholder="Patient's Name" [(ngModel)]="name" > {{name}}
+                <input class="form-control" type="text" id="kname" name="pname" placeholder="Patient's Name" [(ngModel)]="name" >
             </div>
-
+            
 <br>
             <div class="form-group d-flex">
                 <h5>  <label for="gender" class="l1"> <strong> Gender: </strong>&nbsp;</label></h5>
-                <select class="form-control inputSame" id="gender" [(ngModel)]="gen">
-                  <option value=" ">Select</option>
+                <select class="form-control  inputSame" id="gender" name="gen" [(ngModel)]="gen">
+                  <option value="">Select</option>
                     <option value="m" >Male</option>
                     <option value="f" >Female</option>
                 </select>
@@ -40,18 +40,18 @@
 <br>
             <div class="form-group d-flex">
                 <h5>  <label for="specimen" class="l1"> <strong>Specimen: </strong>&nbsp;</label></h5>
-                    <input class="form-control" id="specimen" type="text" id="name" placeholder="Enter Specimen" [(ngModel)]="spec">
+                    <input class="form-control" id="specimen" type="text" id="name" name="spec" placeholder="Enter Specimen" [(ngModel)]="spec">
                 </div>
 <br>
 
             <div class="form-group d-flex">
                 <h5>  <label for="srno" class="l1"> <strong>Ph no: </strong>&nbsp;</label></h5>
-                    <input class="form-control" id="srno" type="text" id="name" placeholder="Enter Ph. No." [(ngModel)]="phNum">
+                    <input class="form-control" id="srno" type="text" id="name" name="ph" placeholder="Enter Ph. No." [(ngModel)]="phNum">
                 </div>
             <br>
             <div class="form-group d-flex">
                 <h5>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h5>
-                    <input class="form-control" id="refDr" type="text" id="name" placeholder="Dr. Name">
+                    <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name">
                 </div>
             <br>
             <br>

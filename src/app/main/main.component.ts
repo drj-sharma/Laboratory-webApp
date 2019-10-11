@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
   d = new Date();
   name: string;
   spec: string;
-  gen = ' ';
+  gen = '';
   phNum: number;
   drName: string;
   h1: string;
@@ -31,8 +31,7 @@ export class MainComponent implements OnInit {
   h15: string;
   h16: string;
   h17: string;
-  haemaRep =  [this.h1, this.h2, this.h3, this.h4, this.h5, this.h6, this.h7, this.h8,
-    this.h9, this.h10, this.h11, this.h12, this.h13, this.h14, this.h15, this.h16, this.h17];
+  
   msg: string;
   constructor(private http: HttpClient) { }
 
@@ -60,7 +59,7 @@ export class MainComponent implements OnInit {
       ph: this.phNum,
       gen: this.gen,
       speci: this.spec,
-      haemaR: this.haemaRep
+      haemaRep:  [this.h1,this.h2,this.h3,this.h4,this.h5,this.h6,this.h7,this.h8,this.h9,this.h10,this.h11,this.h12,this.h13,this.h14,this.h15,this.h16,this.h17]
     };
     this.http.post('http://localhost:3000/api/print', params, {responseType: 'text'}).subscribe(
       (res) => {

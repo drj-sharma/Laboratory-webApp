@@ -1,6 +1,6 @@
-var express = require("express");
-var app = express();
-var mongoose = require("mongoose");
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
 
 // for CORS
 app.use(function (req, res, next) {
@@ -25,28 +25,23 @@ var SignupSchema = new mongoose.Schema(
 );
 var Signup = mongoose.model("signup", SignupSchema,"signup");
 
+// patient
 
-app.post("/api/signup", function(req, res) {
-  mongoose.connect("mongodb://localhost/labdb");
-
-  var newsignup = new Signup(
-    {
-     Name:req.body.name,
-     Username: req.body.username,
-     Password: req.body.password
-     });
-
-  newsignup.save(function(err) {
-  if (err) {
-     console.log(err);
-     res.send("Error while signing up!");
-     } else {
-     res.send("Signup Successful");
- }
-  mongoose.connection.close();
-  });
- });
-
+var patientSchema = new mongoose.Schema(
+  {
+    Id: { type: Number, unique: true },
+    Name: String,
+    Sex: String,
+    Phone: Number,
+    Specimen: String,
+    heamaArr: { },
+    urineArr: { },
+  },
+  {
+    versionKey: false
+  }
+);
+var patientInfo = mongoose.model("patientinfo", patientSchema,"patientinfo");
 
 app.post("/api/login", function(req, res) {
   mongoose.connect("mongodb://localhost/labdb");
@@ -66,7 +61,33 @@ app.post("/api/login", function(req, res) {
   }
   mongoose.connection.close();
  });
+}); // jkds
+
+// save data
+app.post("/api/print", function(req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+
+var newpatient = new patientSchema
+  {
+   Name:req.body.name,
+   Sex:req.body.gen,
+   Phone:req.body.phNum,
+   Specimen: req.body.speci,
+   heamaArr: req.body.heamaR
+   });
+
+newsignup.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save Successfully");
+}
+mongoose.connection.close();
 });
+});
+
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
