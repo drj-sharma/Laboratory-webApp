@@ -76,7 +76,7 @@ var newpatient = new patientSchema
    heamaArr: req.body.heamaR
    });
 
-newsignup.save(function(err) {
+newpatient.save(function(err) {
 if (err) {
    console.log(err);
    res.send("Error while saving");
