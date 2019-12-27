@@ -1,0 +1,44 @@
+<div class="login-container">
+    <div class="container">
+        <br><br><br><br>
+        <h1 class="text-light">Login Form</h1>
+        <br><br>
+        <div id="login">
+                <div class="container">
+                    <div id="login-row" class="row justify-content-left align-items-left">
+                        <div id="login-column" class="col-md-4 border border-white rounded pt-5">
+                            <div id="login-box" class="col-md-12 pb-5">
+                                <form id="login-form" class="form" action="" method="post">
+                                    <!-- <h3 class="text-center text-info">Login</h3> -->
+                                    <div class="form-group">
+                                        <label for="username" class="text-dark font-weight-bold">Username:</label><br>
+                                        <input type="text" name="username" id="username" required="" name="usr" class="form-control" [(ngModel)]="username" #userName = "ngModel">
+                                    </div>
+                                    <div *ngIf="userName.touched && userName.invalid" class="alert alert-danger">
+                                      must be filled</div>
+
+
+                                    <div class="form-group">
+                                        <label for="password" class="text-dark font-weight-bold">Password:</label><br>
+                                        <input type="password" name="password" id="password" name="pass" required="" class="form-control" [(ngModel)]="password" #pass="ngModel">
+                                        <div *ngIf="pass.touched && pass.invalid" class="alert alert-danger">
+                                            must be filled</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div *ngIf="(userName.dirty) && (pass.dirty)">
+                                      <input type="submit" name="submit" class="btn btn-primary btn-md" value="Login" (click)="logIn()">
+                                      </div>
+                                    </div>
+
+                                    <p class="text-center text-danger"><small>{{msg}}</small></p>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+    </div>
+</div>
+

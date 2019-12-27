@@ -1,0 +1,357 @@
+<nav>
+  <ul>
+    <li><a routerLink="./" fragment="Home">Home</a></li>
+    <li><a routerLink="./" fragment="newPatient">New Patient Details</a></li>
+    <li><a href="#">Edit Patient Details</a></li>
+    <li><a href="#">Search Patient Details</a></li>
+    <li><a href="#">All Patient Details</a></li>
+    <li><a href="#">About Admin</a></li>
+  </ul>
+</nav>
+<span id="Home"></span>
+<section id="showcase">
+</section>
+<div id="newPatient" > </div>
+<div class="marginTop"></div>
+   <header class="jumbotron">
+        <h1 class="text-center display-3" > Patient's Details </h1>
+    </header>
+<br>
+    <div class="marginBody">
+   <p id="alginRight" ><strong> Date: </strong> {{d | date}}</p>
+
+
+    <div class="container">
+        <form id="survey-form">
+            <div class="form-group d-flex">
+            <h5>  <label for="patient" class="l1"> <strong> Name: </strong>&nbsp;</label></h5>
+                <input class="form-control" type="text" id="kname" name="pname" placeholder="Patient's Name" [(ngModel)]="name" >
+            </div>
+            
+<br>
+            <div class="form-group d-flex">
+                <h5>  <label for="gender" class="l1"> <strong> Gender: </strong>&nbsp;</label></h5>
+                <select class="form-control  inputSame" id="gender" name="gen" [(ngModel)]="gen">
+                  <option value="">Select</option>
+                    <option value="m" >Male</option>
+                    <option value="f" >Female</option>
+                </select>
+            </div>
+<br>
+            <div class="form-group d-flex">
+                <h5>  <label for="specimen" class="l1"> <strong>Specimen: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="specimen" type="text" id="name" name="spec" placeholder="Enter Specimen" [(ngModel)]="spec">
+                </div>
+<br>
+
+            <div class="form-group d-flex">
+                <h5>  <label for="srno" class="l1"> <strong>Phone no: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="srno" type="text" id="name" name="ph" placeholder="Enter Ph. No." [(ngModel)]="phNum">
+                </div>
+            <br>
+            <div class="form-group d-flex">
+                <h5>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h5>
+                    <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name">
+                </div>
+            <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button> <br>
+        </form>
+        </div>
+</div>
+
+
+<header class="jumbotron">
+  <h1 class="text-center display-3" >Enter Report Below</h1>
+</header>
+<br>
+
+
+<div id="container">
+    <ul class="faq">
+        <li class="q"><img src="../../assets/arrow.png"> HEAMATOLOGICAL REPORT</li>
+        <div class="cont_a">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Heamoglobin</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele1" [(ngModel)]="h1">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> T.L.C</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele2" [(ngModel)]="h2">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> D.L.C</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele3" [(ngModel)]="h3">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Neutrophils</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele4" [(ngModel)]="h4">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Lymphocytes</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele5" [(ngModel)]="h5">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Monocytes</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele6" [(ngModel)]="h6">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Eosinophills</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele7" [(ngModel)]="h7">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Basophils</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele8" [(ngModel)]="h8">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> M.P Card</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele9" [(ngModel)]="h9">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> E.S.R</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele10" [(ngModel)]="h10">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> R.B.C</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele11" [(ngModel)]="h11">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Paletelet Count</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele12" [(ngModel)]="h12">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Absoulte Eosinophills</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele13" [(ngModel)]="h13">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Bleeding Time</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele14" [(ngModel)]="h14">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Coagulation Time</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele15" [(ngModel)]="h15">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Blood Group</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele16" [(ngModel)]="h16">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Sputum for AFB</span></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="ele17" [(ngModel)]="h17">
+                    </div>
+                  </div>
+                  <button mat-raised-button color="accent" onclick="onSubmit()">Submit</button>
+            </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> URINE EXAMINATION REPORT</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-25">
+                          <label for="fname" class="h4"><span class="sp1"> Blood Glucose Fasting</span></label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="fname" name="ele1">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="fname" class="h4"><span class="sp1"> Blood Glucose(PP)</span></label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="fname" name="ele2">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="fname" class="h4"><span class="sp1"> Blood Glucose Random</span></label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="fname" name="ele3">
+                        </div>
+                      </div>
+                      <button mat-raised-button color="accent">Submit</button>
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> LIQUID PROFILE</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Cholesrerol:</span></label>
+                  </div><label for="chol"></label>  <input type="text" name="ele1"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. HDL Cholesrerol:</span></label>
+                  </div><label for="chol"> </label> <input type="text" id="chol" name="ele2"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">S. VLDL Cholesrerol: </span></label>
+                    </div>
+                    <input type="text" name="ele3"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">S. LDL Cholesrerol: </span></label>
+                    </div><input type="text" name="ele4"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">S. Triglycerides: </span></label>
+                    </div> <input type="text" name="ele5"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">S. Chol HDL Ratio:</span></label>
+                    </div> <input type="text" name="ele6"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">S. LDL HDL Ratio:</span></label>
+                    </div> <input type="text" name="ele7"><br>
+                    <button mat-raised-button color="accent">Submit</button>
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> LIVER FUNCTION TEST</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1"> Serum G.O.t(AST): </span></label>
+                  </div>
+                   <input type="text" name="ele1"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Serum G.P.T(ALT): </span></label>
+                    </div><input type="text" name="ele2"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Total S. Bilirubin: </span></label>
+                    </div><input type="text" name="ele3"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> >Direct:</span></label>
+                    </div><input type="text" name="ele4"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">Indirect: </span></label>
+                    </div><input type="text" name="ele5"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> S. Alk Phosphatase: </span></label>
+                    </div><input type="text" name="ele6"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> S. Total Proteins: </span></label>
+                    </div><input type="text" name="ele7"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> Albumin:</span></label>
+                    </div><input type="text" name="ele8"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1">Globulin:</span></label>
+                    </div><input type="text" name="ele9"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> AG Ratio: </span></label>
+                    </div><input type="text" name="ele10"><br>
+                    <button mat-raised-button color="accent">Submit</button>
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> RENAL FUNCTION TEST</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">Blood Urea: </span></label>
+                  </div> <input type="text"  name="ele1"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Creatinine: </span></label>
+                  </div> <input type="text" name="ele2"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Uric Acid:  </span></label>
+                  </div><input type="text" name="ele3"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Phosphorus:</span></label>
+                  </div> <input type="text" name="ele4"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
+                    </div><input type="text" name="ele5"><br>
+                    <div class="col-25">
+                      <label for="fname" class="h4"><span class="sp1"> S. Magnesium: </span></label>
+                    </div> <input type="text" name="ele6"><br>
+                    <button mat-raised-button color="accent">Submit</button>
+                </form>
+        </div>
+        <li class="q"><img src="../../assets/arrow.png"> SERUM ELECTROLYTES</li>
+        <div class="cont_a">
+                <form action="/action_page.php">
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Sodium:  </span></label>
+                  </div><input type="text" name="ele1"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1">S. Potassium:</span></label>
+                  </div> <input type="text" name="ele2"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1"> Magnesium:</span></label>
+                  </div> <input type="text" name="ele3"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1"> Phosphorus:</span></label>
+                  </div> <input type="text" name="ele4"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
+                  </div><input type="text" name="ele5"><br>
+                  <div class="col-25">
+                    <label for="fname" class="h4"><span class="sp1"> Chloride: </span></label>
+                  </div><input type="text" name="ele6"><br>
+                    <button mat-raised-button color="accent">Submit</button>
+                </form>
+        </div>
+    </ul>
+</div>
+
