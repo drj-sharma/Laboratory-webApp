@@ -27,26 +27,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
 
-nav ul {
-    list-style: none;
-    background-color: white;
-}
-
-nav ul a {
-    display: block;
-    text-align: center;
-    font-size: 1.25rem;
-    color: #000000;
-    text-decoration: none;
-    padding: 1rem;
-}
 
 #showcase {
     height: 100vh;
@@ -56,7 +37,7 @@ nav ul a {
 .marginTop {
   margin-top: 50px;
 }
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
 
 
     nav ul {
@@ -74,7 +55,7 @@ nav ul a {
     nav ul a:hover {
         opacity: 0.7;
     }
-}
+} */
 
 .marginBody {
   margin-left: 20px;
@@ -97,70 +78,8 @@ body{
     width: 100%;
 }
 
-ul,li{
-	list-style:none;
-}
-
-#container{
-	width:80%;
-	margin:30px auto;
-	overflow:auto;
-}
-
-h1{
-	text-align:center;
-	margin-bottom:20px;
-}
-
-.title{
-	height:40px;
-	background:#6bb170;
-	color:#fff;
-	text-align:center;
-	padding-top:13px;
-}
-header{
-    padding-top: 20px;
-    width: 100%;
-}
-
-.faq li{
-	padding:30px;
-}
-
-.faq li.q{
-	background-color:rgba(169,169,169, 0.5);
-	font-weight:bold;
-	font-size:120%;
-	border-bottom:1px black solid;
-	cursor:pointer;
-}
 
 
-
-.rotate{
-	-moz-transform:rotate(90deg);
-	-webkit-transform:rotate(90deg);
-	transform:rotate(90deg);
-}
-
-@media(max-width:800px){
-	#container{
-		width:90%;
-	}
-}
-
-.cont_a{
-    padding: 15px;
-    background:rgb(255,240,245);
-    height: auto;
-    width: auto;
-    overflow: hidden;
-    display: none;
-}
-.row{
-  height: 100%;
-}
 input[type=text], select, textarea {
   padding: 6px;
   font-size: 13px;
@@ -190,31 +109,7 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
 
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.h4{
-  font-size: 20px;
-  height: 100%;
-  display: table;
-}
-.sp1{
-  display: table-cell;
-  vertical-align: middle;
-}
 
 button {
   width: 50%;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -34,24 +34,9 @@ export class MainComponent implements OnInit {
   msg: string;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit() {       // JQuery
-    const action = 'click';
-    const speed = '500';
-
-    // tslint:disable-next-line: deprecation
-    $(document).ready(() =>  {
-      $('li.q').on(action , function() {
-        $(this).next()
-          .slideToggle(speed)
-            .siblings('.cont_a')
-              .slideUp();
-        const img = $(this).children('img');
-        $('img').not(img).removeClass('rotate');
-        img.toggleClass('rotate');
-      });
-    });
+  ngOnInit() {
   }
 
   onSubmit() {
@@ -60,12 +45,13 @@ export class MainComponent implements OnInit {
       ph: this.phNum,
       gen: this.gen,
       speci: this.spec,
-   //   haemaRep:  [this.h1,this.h2,this.h3,this.h4,this.h5,this.h6,this.h7,this.h8,this.h9,this.h10,this.h11,this.h12,this.h13,this.h14,this.h15,this.h16,this.h17]
     };
     // console.log(params);
-    this.http.post('http://localhost:3000/api/print', params, {responseType: 'text'}).subscribe(
+    this.http.post('http://localhost:3000/api/patientinfo', params, {responseType: 'text'}).subscribe(
       (res) => {
         this.msg = res;
+        console.log(this.msg);
+        this.router.navigate(['/reports', this.msg]);
       },
       (err) => {
         this.msg = err;

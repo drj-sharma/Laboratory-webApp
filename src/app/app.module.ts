@@ -13,7 +13,10 @@ import { AllpatientComponent } from './allpatient/allpatient.component';
 import { AboutComponent } from './about/about.component';
 import { PrintdataComponent } from './printdata/printdata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatTableModule } from '@angular/material';
+import { PatientreportComponent } from './patientreport/patientreport.component';
+import { HeaderComponent } from './header/header.component';
+import { ReportsComponent } from './reports/reports.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,10 @@ import { MatButtonModule } from '@angular/material';
     SearchpatientComponent,
     AllpatientComponent,
     AboutComponent,
-    PrintdataComponent
+    PrintdataComponent,
+    PatientreportComponent,
+    HeaderComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,9 @@ import { MatButtonModule } from '@angular/material';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

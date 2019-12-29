@@ -1,0 +1,44 @@
+@media screen and (min-width: 576px) {
+
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 0;
+    }
+
+    nav ul a {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+
+    nav ul a:hover {
+        opacity: 0.7;
+    }
+}
+
+  ul,li{
+	list-style:none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  nav ul {
+      list-style: none;
+      background-color: white;
+  }
+  
+  nav ul a {
+      display: block;
+      text-align: center;
+      font-size: 1.0rem;
+      color: #000000;
+      text-decoration: none;
+      padding: 1rem;
+  }

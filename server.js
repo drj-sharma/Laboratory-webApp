@@ -30,11 +30,11 @@ app.use(function (req, res, next) {
 
 var patientSchema = new mongoose.Schema(
   {
-    Id: { type: Number, unique: true },
     Name: String,
     Sex: String,
     Phone: Number,
     Specimen: String,
+    Date: Date
     //heamaArr: { },
     //urineArr: { },
   },
@@ -43,6 +43,22 @@ var patientSchema = new mongoose.Schema(
   }
 );
 var patientinfo = mongoose.model("patientinfo", patientSchema,"patientinfo");
+
+// report data
+var HeamotologySchema = new mongoose.Schema(
+  {
+    id: String,
+    Heamoarr: Array
+    //heamaArr: { },
+    //urineArr: { },
+  },
+  {
+    versionKey: false
+  }
+);
+
+var heamo = mongoose.model("Heamotology", HeamotologySchema,"Heamotology");
+
 
 
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -68,17 +84,17 @@ app.use(bodyparser.json());
 //  });
 // }); // jkds
 
-// save data
-app.post("/api/print", function(req, res) {
+// save patient data
+app.post("/api/patientinfo", function(req, res) {
   console.log(req.body);
-  mongoose.connect("mongodb://localhost/labdb", {useUnifiedTopology: true,
-  useNewUrlParser: true,});
+  mongoose.connect("mongodb://localhost/labdb");
 var newpatient = new patientinfo(
   {
    Name:req.body.nm,
    Sex: req.body.gen,
    Phone:req.body.ph,
    Specimen: req.body.speci,
+   Date: Date.now()
   // heamaArr: req.body.heamaR
    });
 
@@ -87,18 +103,53 @@ if (err) {
    console.log(err);
    res.send("Error while saving");
    } else {
-   res.send("Save Successfully");
+   res.send(newpatient._id);
 }
 mongoose.connection.close();
 });
 });
 
 
+// save report-data of patients
+app.post("/api/report-heamo", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newheamo = new heamo(
+  {
+   id: req.body.id,
+   Heamoarr: req.body.hm
+   });
+
+newheamo.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save report");
+}
+mongoose.connection.close();
+});
+});
+
+
+// fetch patient-data
+app.get("/api/fetchpatients", function (req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+
+  patientinfo.find(function (err, data) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      console.log(data);
+      res.send(data);
+    }
+    mongoose.connection.close();
+  });
+});
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 })
-
-
-
 

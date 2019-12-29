@@ -1,1 +1,26 @@
-<p>allpatient works!</p>
+<header class="jumbotron">
+    <h1 class="text-center display-3" > Patient's Details </h1>
+</header>
+
+<table>
+    <thead>
+      <tr>
+        <th scope="col">Patient's Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Specimen</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of patients">
+        <td data-label="Account">{{item.Name| titlecase}}</td>
+        <td data-label="Due Date">{{item.Sex| titlecase}}</td>
+        <td data-label="Amount">{{item.Specimen| titlecase}}</td>
+        <td data-label="Period">{{item.Phone}}</td>
+        <td data-label="Period">{{item.Date | date:'medium'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
