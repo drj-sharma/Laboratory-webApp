@@ -44,11 +44,15 @@ export class PrintdataComponent implements OnInit {
         },
         (err) => this.msg = err
         );
+
   }
 
-  toCheck(arr) {
-    let checker = arr.every(v => v === null);
-    return checker;
+  printPage() {
+    window.print();
   }
+  // toCheck(arr) {
+  //   let checker = arr.every(v => v === null);
+  //   return checker;
+  // }
 }
 
