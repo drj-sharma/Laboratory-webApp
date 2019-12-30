@@ -44,11 +44,11 @@ var patientSchema = new mongoose.Schema(
 );
 var patientinfo = mongoose.model("patientinfo", patientSchema,"patientinfo");
 
-// report data
-var HeamotologySchema = new mongoose.Schema(
+// report haemo data
+var haemotologySchema = new mongoose.Schema(
   {
     id: String,
-    Heamoarr: Array
+    haemoarr: Array
     //heamaArr: { },
     //urineArr: { },
   },
@@ -56,11 +56,69 @@ var HeamotologySchema = new mongoose.Schema(
     versionKey: false
   }
 );
+var haemo = mongoose.model("haemotology", haemotologySchema,"haemotology");
 
-var heamo = mongoose.model("Heamotology", HeamotologySchema,"Heamotology");
+// report urine data
+var urineSchema = new mongoose.Schema(
+  {
+    id: String,
+    urinearr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var urine = mongoose.model("urineExamination", urineSchema,"urineExamination");
 
+// report liquid data
+var liquidSchema = new mongoose.Schema(
+  {
+    id: String,
+    liquidarr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var liquid = mongoose.model("liquidProfile", liquidSchema,"liquidProfile");
 
+// report liver data
+var liverSchema = new mongoose.Schema(
+  {
+    id: String,
+    liquidarr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var liver = mongoose.model("liverFunctionalTest", liverSchema,"liverFunctionalTest");
 
+// report renal data
+var renalSchema = new mongoose.Schema(
+  {
+    id: String,
+    renalarr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var renal = mongoose.model("renalFunctionalTest", renalSchema,"renalFunctionalTest");
+
+// report serum data
+var serumSchema = new mongoose.Schema(
+  {
+    id: String,
+    serumarr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var serum = mongoose.model("serumElectrolytes", serumSchema,"serumElectrolytes");
+
+// bodyparser for json type data handling in the form of req and res body
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
@@ -110,22 +168,127 @@ mongoose.connection.close();
 });
 
 
-// save report-data of patients
+// save report-haemotology of patients
 app.post("/api/report-heamo", function(req, res) {
   console.log(req.body);
   mongoose.connect("mongodb://localhost/labdb");
-var newheamo = new heamo(
+var newhaemo = new haemo(
   {
    id: req.body.id,
-   Heamoarr: req.body.hm
+   haemoarr: req.body.hm
    });
 
-newheamo.save(function(err) {
+newhaemo.save(function(err) {
 if (err) {
    console.log(err);
    res.send("Error while saving");
    } else {
-   res.send("Save report");
+   res.send("Save haemotology report");
+}
+mongoose.connection.close();
+});
+});
+
+// save report-urine of patients
+app.post("/api/report-urine", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newurine = new urine(
+  {
+   id: req.body.id,
+   urinearr: req.body.ur
+   });
+
+  newurine.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save urine report");
+}
+mongoose.connection.close();
+});
+});
+
+// save report-liquid of patients
+app.post("/api/report-liquid", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newliquid = new liquid(
+  {
+   id: req.body.id,
+   liquidarr: req.body.lq
+   });
+
+  newliquid.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save liquid report");
+}
+mongoose.connection.close();
+});
+});
+
+// save report-liver of patients
+app.post("/api/report-liver", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newliver = new liver(
+  {
+   id: req.body.id,
+   liverarr: req.body.lv
+   });
+
+  newliver.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save liver report");
+}
+mongoose.connection.close();
+});
+});
+
+// save report-liver of patients
+app.post("/api/report-renal", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newrenal = new renal(
+  {
+   id: req.body.id,
+   renalarr: req.body.rn
+   });
+
+  newrenal.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save renal report");
+}
+mongoose.connection.close();
+});
+});
+
+// save report-serum of patients
+app.post("/api/report-serum", function(req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+var newserum = new serum(
+  {
+   id: req.body.id,
+   serumarr: req.body.sr
+   });
+
+  newserum.save(function(err) {
+if (err) {
+   console.log(err);
+   res.send("Error while saving");
+   } else {
+   res.send("Save serum report");
 }
 mongoose.connection.close();
 });
@@ -147,6 +310,48 @@ app.get("/api/fetchpatients", function (req, res) {
     mongoose.connection.close();
   });
 });
+
+// get user data by id
+
+app.get("/api/fetchpatientbyid", function (req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+  console.log(req.query);
+
+  patientinfo.find({ _id: req.query.id }, function (err, data) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    }
+    else {
+      console.log(data);
+      res.send(data);
+    }
+    mongoose.connection.close();
+  });
+});
+
+// get haemotology data by id
+
+
+// get user data by id
+app.get("/api/haemo-rep", function (req, res) {
+  mongoose.connect("mongodb://localhost/labdb");
+  console.log(req.query);
+
+  haemo.find({ id: req.query.id }, function (err, data) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    }
+    else {
+      console.log(data);
+      res.send(data);
+    }
+    mongoose.connection.close();
+  });
+});
+
+
 
 
 app.listen(3000, () => {

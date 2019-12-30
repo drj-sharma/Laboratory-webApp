@@ -11,7 +11,7 @@ import { ReportsComponent } from './reports/reports.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'main', component: MainComponent},
-  { path: 'printdata', component: PrintdataComponent},
+  { path: 'printdata/:id', component: PrintdataComponent},
   { path: 'searchpatient', component: SearchpatientComponent},
   {path: 'allpatients', component: AllpatientComponent},
   {path: 'reports/:id', component: ReportsComponent}

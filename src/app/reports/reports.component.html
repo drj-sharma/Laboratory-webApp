@@ -3,12 +3,10 @@
     <h1 class="text-center display-3" >Enter Report Below</h1>
   </header>
   <br>
-  
-    
-  <button class="right" mat-raised-button color="accent" [routerLink]="['/printdata']" routerLinkActive="router-link-active" >Proceed to print</button>
+  <button class="right" mat-raised-button color="accent" (click)="proceedId()" >Proceed to print</button>
   <div id="container">
       <ul class="faq">
-          <li class="q"><img src="../../assets/arrow.png"> HEAMATOLOGICAL REPORT</li>
+          <li class="q"><img src="../../assets/arrow.png"> HAEMATOLOGICAL REPORT</li>
           <div class="cont_a">
               <form action="/action_page.php">
                   <div class="row">
@@ -158,7 +156,7 @@
                             <label for="fname" class="h4"><span class="sp1"> Blood Glucose Fasting</span></label>
                           </div>
                           <div class="col-75">
-                            <input type="text" id="fname" name="ele1">
+                            <input type="text" id="fname" name="ele1" [(ngModel)]="u1">
                           </div>
                         </div>
                         <div class="row">
@@ -166,7 +164,7 @@
                             <label for="fname" class="h4"><span class="sp1"> Blood Glucose(PP)</span></label>
                           </div>
                           <div class="col-75">
-                            <input type="text" id="fname" name="ele2">
+                            <input type="text" id="fname" name="ele2" [(ngModel)]="u2">
                           </div>
                         </div>
                         <!-- <div class="row"> -->
@@ -174,10 +172,10 @@
                             <label for="fname" class="h4"><span class="sp1"> Blood Glucose Random</span></label>
                           </div>
                           <div class="col-75">
-                            <input type="text" id="fname" name="ele3">
+                            <input type="text" id="fname" name="ele3" [(ngModel)]="u3">
                           </div>
                         <!-- </div> -->
-                        <button mat-raised-button color="accent">Submit</button>
+                        <button mat-raised-button color="accent" (click)="onSub2()">Submit</button>
                   </form>
           </div>
           <li class="q"><img src="../../assets/arrow.png"> LIQUID PROFILE</li>
@@ -185,64 +183,64 @@
                   <form action="/action_page.php">
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Cholesrerol:</span></label>
-                    </div><label for="chol"></label>  <input type="text" name="ele1"><br>
+                    </div><label for="chol"></label>  <input type="text" name="ele1" [(ngModel)]="l1"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. HDL Cholesrerol:</span></label>
-                    </div><label for="chol"> </label> <input type="text" id="chol" name="ele2"><br>
+                    </div><label for="chol"> </label> <input type="text" id="chol" name="ele2" [(ngModel)]="l2"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">S. VLDL Cholesrerol: </span></label>
                       </div>
-                      <input type="text" name="ele3"><br>
+                      <input type="text" name="ele3" [(ngModel)]="l3"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">S. LDL Cholesrerol: </span></label>
-                      </div><input type="text" name="ele4"><br>
+                      </div><input type="text" name="ele4" [(ngModel)]="l4"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">S. Triglycerides: </span></label>
-                      </div> <input type="text" name="ele5"><br>
+                      </div> <input type="text" name="ele5" [(ngModel)]="l5"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">S. Chol HDL Ratio:</span></label>
-                      </div> <input type="text" name="ele6"><br>
+                      </div> <input type="text" name="ele6" [(ngModel)]="l6"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">S. LDL HDL Ratio:</span></label>
-                      </div> <input type="text" name="ele7"><br>
-                      <button mat-raised-button color="accent">Submit</button>
+                      </div> <input type="text" name="ele7" [(ngModel)]="l7"><br>
+                      <button mat-raised-button color="accent" (click)="onSub3()">Submit</button>
                   </form>
           </div>
           <li class="q"><img src="../../assets/arrow.png"> LIVER FUNCTION TEST</li>
           <div class="cont_a">
                   <form action="/action_page.php">
                     <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> Serum G.O.t(AST): </span></label>
+                      <label for="fname" class="h4"><span class="sp1"> Serum G.O.T(AST): </span></label>
                     </div>
-                     <input type="text" name="ele1"><br>
+                     <input type="text" name="ele1" [(ngModel)]="lv1"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> Serum G.P.T(ALT): </span></label>
-                      </div><input type="text" name="ele2"><br>
+                      </div><input type="text" name="ele2" [(ngModel)]="lv2"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> Total S. Bilirubin: </span></label>
-                      </div><input type="text" name="ele3"><br>
+                      </div><input type="text" name="ele3" [(ngModel)]="lv3"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> Direct:</span></label>
-                      </div><input type="text" name="ele4"><br>
+                      </div><input type="text" name="ele4" [(ngModel)]="lv4"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">Indirect: </span></label>
-                      </div><input type="text" name="ele5"><br>
+                      </div><input type="text" name="ele5" [(ngModel)]="lv5"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> S. Alk Phosphatase: </span></label>
-                      </div><input type="text" name="ele6"><br>
+                      </div><input type="text" name="ele6" [(ngModel)]="lv6"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> S. Total Proteins: </span></label>
-                      </div><input type="text" name="ele7"><br>
+                      </div><input type="text" name="ele7" [(ngModel)]="lv7"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> Albumin:</span></label>
-                      </div><input type="text" name="ele8"><br>
+                      </div><input type="text" name="ele8" [(ngModel)]="lv8"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1">Globulin:</span></label>
-                      </div><input type="text" name="ele9"><br>
+                      </div><input type="text" name="ele9" [(ngModel)]="lv9"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> AG Ratio: </span></label>
-                      </div><input type="text" name="ele10"><br>
-                      <button mat-raised-button color="accent">Submit</button>
+                      </div><input type="text" name="ele10" [(ngModel)]="lv10"><br>
+                      <button mat-raised-button color="accent" (click)="onSub4()">Submit</button>
                   </form>
           </div>
           <li class="q"><img src="../../assets/arrow.png"> RENAL FUNCTION TEST</li>
@@ -250,23 +248,23 @@
                   <form action="/action_page.php">
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">Blood Urea: </span></label>
-                    </div> <input type="text"  name="ele1"><br>
+                    </div> <input type="text" name="ele1" [(ngModel)]="r1"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Creatinine: </span></label>
-                    </div> <input type="text" name="ele2"><br>
+                    </div> <input type="text" name="ele2" [(ngModel)]="r2"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Uric Acid:  </span></label>
-                    </div><input type="text" name="ele3"><br>
+                    </div><input type="text" name="ele3" [(ngModel)]="r3"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Phosphorus:</span></label>
-                    </div> <input type="text" name="ele4"><br>
+                    </div> <input type="text" name="ele4" [(ngModel)]="r4"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
-                      </div><input type="text" name="ele5"><br>
+                      </div><input type="text" name="ele5" [(ngModel)]="r5"><br>
                       <div class="col-25">
                         <label for="fname" class="h4"><span class="sp1"> S. Magnesium: </span></label>
-                      </div> <input type="text" name="ele6"><br>
-                      <button mat-raised-button color="accent">Submit</button>
+                      </div> <input type="text" name="ele6" [(ngModel)]="r6"><br>
+                      <button mat-raised-button color="accent" (click)="onSub5()">Submit</button>
                   </form>
           </div>
           <li class="q"><img src="../../assets/arrow.png"> SERUM ELECTROLYTES</li>
@@ -274,23 +272,23 @@
                   <form action="/action_page.php">
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Sodium:  </span></label>
-                    </div><input type="text" name="ele1"><br>
+                    </div><input type="text" name="ele1" [(ngModel)]="s1"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1">S. Potassium:</span></label>
-                    </div> <input type="text" name="ele2"><br>
+                    </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1"> Magnesium:</span></label>
-                    </div> <input type="text" name="ele3"><br>
+                    </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1"> Phosphorus:</span></label>
-                    </div> <input type="text" name="ele4"><br>
+                    </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
-                    </div><input type="text" name="ele5"><br>
+                    </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
                     <div class="col-25">
                       <label for="fname" class="h4"><span class="sp1"> Chloride: </span></label>
-                    </div><input type="text" name="ele6"><br>
-                      <button mat-raised-button color="accent">Submit</button>
+                    </div><input type="text" name="ele6" [(ngModel)]="s6"><br>
+                      <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
                   </form>
           </div>
       </ul>

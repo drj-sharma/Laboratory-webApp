@@ -1,1 +1,16 @@
-<button>klfd</button>
+<div id="container">
+     <button mat-fab><mat-icon>print</mat-icon></button> <br><br><br>
+<table mat-table>
+    <tr *ngFor="let item of patients">
+    <td>
+        Name: <strong>{{item.Name | titlecase }} </strong> <br> </td>
+        <td>
+        Sex: <strong>{{item.Sex | titlecase }} </strong> <br></td>
+       <td> Specimen: <strong> {{item.Specimen | titlecase }}</strong> <br></td>
+        <td>Date: <strong> {{item.Date | date: 'shortDate'}} </strong></td>
+</tr>
+
+  </table> <br> <br>
+  <div *ngIf="!haemo" style="text-align: center;">
+    <strong> HAEMATOLOGY PROFILE</strong>
+</div>
