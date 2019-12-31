@@ -66,7 +66,7 @@ export class ReportsComponent implements OnInit {
 
   id: string;
   sub: any;
-  heamaRep: any;
+  haemaRep: any;
   urineRep: any;
   liquidRep: any;
   liquidPro: any;
@@ -98,13 +98,13 @@ export class ReportsComponent implements OnInit {
   }
 
   onSub1() {
-    this.heamaRep = [this.h1,this.h2,this.h3,this.h4,this.h5,this.h6,this.h7,this.h8,this.h9,this.h10,this.h11,this.h12,this.h13,this.h14,this.h15,this.h16,this.h17];
+    this.haemaRep = [this.h1,this.h2,this.h3,this.h4,this.h5,this.h6,this.h7,this.h8,this.h9,this.h10,this.h11,this.h12,this.h13,this.h14,this.h15,this.h16,this.h17];
     const heamo =  {
       id: this.id,
-      hm: this.heamaRep
+      hm: this.haemaRep
     };
     console.log(heamo);
-    this.http.post('http://localhost:3000/api/report-heamo', heamo, {responseType: 'text'}).subscribe(
+    this.http.post('http://localhost:3000/api/report-haemo', heamo, {responseType: 'text'}).subscribe(
       (res)=> console.log(res),
       (err) => console.log(err)
       );

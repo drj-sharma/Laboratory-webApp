@@ -116,3 +116,6 @@ button {
   margin: 0 auto;
     display: block;
 }
+form {
+  margin-left: 140px;
+}
