@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-allpatient',
@@ -10,7 +11,7 @@ export class AllpatientComponent implements OnInit {
 
   patients:[];
   msg: String;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.fetchPatientData();
@@ -24,6 +25,10 @@ export class AllpatientComponent implements OnInit {
       },
       (err) => this.msg = err
       );
+  }
+
+  proceedIdtoprint(id) {
+    this.router.navigate(['/printdata', id]);
   }
 
 

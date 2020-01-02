@@ -64,6 +64,20 @@ export class ReportsComponent implements OnInit {
   s5: string;
   s6: string;
 
+  sm1: string;
+  sm2: string;
+  sm3: string;
+  sm4: string;
+  sm5: string;
+  sm6: string;
+  sm7: string;
+  sm8: string;
+  sm9: string;
+  sm10: string;
+  sm11: string;
+  sm12: string;
+
+
   id: string;
   sub: any;
   haemaRep: any;
@@ -72,7 +86,9 @@ export class ReportsComponent implements OnInit {
   liquidPro: any;
   liverRep: string[];
   renalRep: string[];
-  serumRep: any[];
+  serumRep: string[];
+  semenRep: string[];
+
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -165,6 +181,18 @@ export class ReportsComponent implements OnInit {
     };
     console.log(serum);
     this.http.post('http://localhost:3000/api/report-serum', serum, {responseType: 'text'}).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+      );
+  }
+  onSub10() {
+    this.semenRep = [this.sm1, this.sm2, this.sm3, this.sm4, this.sm5, this.sm6, this.sm7, this.sm8, this.sm9, this.sm10, this.sm11, this.sm12];
+    const semen =  {
+      id: this.id,
+      sm: this.semenRep
+    };
+    console.log(semen);
+    this.http.post('http://localhost:3000/api/report-semen', semen, {responseType: 'text'}).subscribe(
       (res)=> console.log(res),
       (err) => console.log(err)
       );

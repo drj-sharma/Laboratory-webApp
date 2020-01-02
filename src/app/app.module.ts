@@ -13,7 +13,7 @@ import { AllpatientComponent } from './allpatient/allpatient.component';
 import { AboutComponent } from './about/about.component';
 import { PrintdataComponent } from './printdata/printdata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { PatientreportComponent } from './patientreport/patientreport.component';
 import { HeaderComponent } from './header/header.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -38,7 +38,9 @@ import { ReportsComponent } from './reports/reports.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule 
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

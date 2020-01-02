@@ -5,20 +5,26 @@
 <table>
     <thead>
       <tr>
+        <th scope="col">S. No</th>
         <th scope="col">Patient's Name</th>
+        <th scope="col">Age</th>
         <th scope="col">Gender</th>
         <th scope="col">Specimen</th>
         <th scope="col">Phone No.</th>
         <th scope="col">Date</th>
+        <th scope="col">Report Info</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of patients">
-        <td data-label="Account">{{item.Name| titlecase}}</td>
-        <td data-label="Due Date">{{item.Sex| titlecase}}</td>
-        <td data-label="Amount">{{item.Specimen| titlecase}}</td>
-        <td data-label="Period">{{item.Phone}}</td>
-        <td data-label="Period">{{item.Date | date:'medium'}}</td>
+      <tr *ngFor="let item of patients;let i = index">
+        <td data-label="index">{{i + 1}}</td>
+        <td data-label="Name">{{item.Name| titlecase}}</td>
+        <td data-label="Sex">{{item.Age}}</td>
+        <td data-label="Sex">{{item.Sex| titlecase}}</td>
+        <td data-label="Specimen">{{item.Specimen| titlecase}}</td>
+        <td data-label="Phone">{{item.Phone}}</td>
+        <td data-label="Date">{{item.Date | date:'medium'}}</td>
+        <td data-label="click"> <button mat-fab color="primary" (click)="proceedIdtoprint(item._id)"><mat-icon>input</mat-icon></button> </td>
       </tr>
     </tbody>
   </table>

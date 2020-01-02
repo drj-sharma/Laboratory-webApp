@@ -6,6 +6,8 @@
     <tr *ngFor="let item of patients">
       <td>
         Name: <strong>{{item.Name | titlecase }} </strong> <br> </td>
+        <td>
+          Age: <strong>{{item.Age }} </strong> <br> </td>
       <td>
         Sex: <strong>{{item.Sex | titlecase }} </strong> <br></td>
       <td> Specimen: <strong> {{item.Specimen | titlecase }}</strong> <br></td>
@@ -25,10 +27,10 @@
           <td class="left">Haemoglobin: {{item.haemoarr[0]}} </td>
         </div>
         <div [hidden]="item.haemoarr[1] === null">
-          <td>T.L.C: {{item.haemoarr[1]}}</td> <br>
+          <td class="left">T.L.C: {{item.haemoarr[1]}}</td>
         </div>
         <div [hidden]="item.haemoarr[2] === null">
-          <td class="left">D.L.C: {{item.haemoarr[2]}}</td> <br>
+          <td class="left">D.L.C: {{item.haemoarr[2]}}</td>
         </div>
         <div [hidden]="item.haemoarr[3] === null">
           <td class="left">Neutdophils: {{item.haemoarr[3]}}</td>

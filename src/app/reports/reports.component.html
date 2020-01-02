@@ -1,295 +1,608 @@
-
 <header class="jumbotron">
-    <h1 class="text-center display-3" >Enter Report Below</h1>
-  </header>
-  <br>
-  <button class="right" mat-raised-button color="accent" (click)="proceedId()" >Proceed to print</button>
-  <div id="container">
-      <ul class="faq">
-          <li class="q"><img src="../../assets/arrow.png"> HAEMATOLOGICAL REPORT</li>
-          <div class="cont_a">
-              <form action="/action_page.php">
-                  <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Heamoglobin</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele1" [(ngModel)]="h1">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> T.L.C</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele2" [(ngModel)]="h2">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> D.L.C</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele3" [(ngModel)]="h3">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Neutrophils</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele4" [(ngModel)]="h4">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Lymphocytes</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele5" [(ngModel)]="h5">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Monocytes</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele6" [(ngModel)]="h6">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Eosinophills</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele7" [(ngModel)]="h7">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Basophils</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele8" [(ngModel)]="h8">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> M.P Card</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele9" [(ngModel)]="h9">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> E.S.R</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele10" [(ngModel)]="h10">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> R.B.C</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele11" [(ngModel)]="h11">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Paletelet Count</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele12" [(ngModel)]="h12">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Absoulte Eosinophills</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele13" [(ngModel)]="h13">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Bleeding Time</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele14" [(ngModel)]="h14">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Coagulation Time</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele15" [(ngModel)]="h15">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Blood Group</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele16" [(ngModel)]="h16">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Sputum for AFB</span></label>
-                      </div>
-                      <div class="col-75">
-                        <input type="text" id="fname" name="ele17" [(ngModel)]="h17">
-                      </div>
-                    </div>
-                    <button mat-raised-button color="accent" (click)="onSub1()">Submit</button>
-              </form>
+  <h1 class="text-center display-3">Enter Report Below</h1>
+</header>
+<br>
+<button class="right" mat-raised-button color="accent" (click)="proceedId()">Proceed to print</button>
+<div id="container">
+  <ul class="faq" >
+     <li class="q"><img src="../../assets/arrow.png"> HAEMATOLOGICAL REPORT </li> 
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Haemoglobin</span></label>
           </div>
-          <li class="q"><img src="../../assets/arrow.png"> URINE EXAMINATION REPORT</li>
-          <div class="cont_a">
-                  <form action="/action_page.php">
-                      <div class="row">
-                          <div class="col-25">
-                            <label for="fname" class="h4"><span class="sp1"> Blood Glucose Fasting</span></label>
-                          </div>
-                          <div class="col-75">
-                            <input type="text" id="fname" name="ele1" [(ngModel)]="u1">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-25">
-                            <label for="fname" class="h4"><span class="sp1"> Blood Glucose(PP)</span></label>
-                          </div>
-                          <div class="col-75">
-                            <input type="text" id="fname" name="ele2" [(ngModel)]="u2">
-                          </div>
-                        </div>
-                        <!-- <div class="row"> -->
-                          <div class="col-25">
-                            <label for="fname" class="h4"><span class="sp1"> Blood Glucose Random</span></label>
-                          </div>
-                          <div class="col-75">
-                            <input type="text" id="fname" name="ele3" [(ngModel)]="u3">
-                          </div>
-                        <!-- </div> -->
-                        <button mat-raised-button color="accent" (click)="onSub2()">Submit</button>
-                  </form>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele1" [(ngModel)]="h1">
           </div>
-          <li class="q"><img src="../../assets/arrow.png"> LIQUID PROFILE</li>
-          <div class="cont_a">
-                  <form action="/action_page.php">
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Cholesrerol:</span></label>
-                    </div><label for="chol"></label>  <input type="text" name="ele1" [(ngModel)]="l1"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. HDL Cholesrerol:</span></label>
-                    </div><label for="chol"> </label> <input type="text" id="chol" name="ele2" [(ngModel)]="l2"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">S. VLDL Cholesrerol: </span></label>
-                      </div>
-                      <input type="text" name="ele3" [(ngModel)]="l3"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">S. LDL Cholesrerol: </span></label>
-                      </div><input type="text" name="ele4" [(ngModel)]="l4"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">S. Triglycerides: </span></label>
-                      </div> <input type="text" name="ele5" [(ngModel)]="l5"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">S. Chol HDL Ratio:</span></label>
-                      </div> <input type="text" name="ele6" [(ngModel)]="l6"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">S. LDL HDL Ratio:</span></label>
-                      </div> <input type="text" name="ele7" [(ngModel)]="l7"><br>
-                      <button mat-raised-button color="accent" (click)="onSub3()">Submit</button>
-                  </form>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> T.L.C</span></label>
           </div>
-          <li class="q"><img src="../../assets/arrow.png"> LIVER FUNCTION TEST</li>
-          <div class="cont_a">
-                  <form action="/action_page.php">
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> Serum G.O.T(AST): </span></label>
-                    </div>
-                     <input type="text" name="ele1" [(ngModel)]="lv1"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Serum G.P.T(ALT): </span></label>
-                      </div><input type="text" name="ele2" [(ngModel)]="lv2"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Total S. Bilirubin: </span></label>
-                      </div><input type="text" name="ele3" [(ngModel)]="lv3"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Direct:</span></label>
-                      </div><input type="text" name="ele4" [(ngModel)]="lv4"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">Indirect: </span></label>
-                      </div><input type="text" name="ele5" [(ngModel)]="lv5"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> S. Alk Phosphatase: </span></label>
-                      </div><input type="text" name="ele6" [(ngModel)]="lv6"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> S. Total Proteins: </span></label>
-                      </div><input type="text" name="ele7" [(ngModel)]="lv7"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> Albumin:</span></label>
-                      </div><input type="text" name="ele8" [(ngModel)]="lv8"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1">Globulin:</span></label>
-                      </div><input type="text" name="ele9" [(ngModel)]="lv9"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> AG Ratio: </span></label>
-                      </div><input type="text" name="ele10" [(ngModel)]="lv10"><br>
-                      <button mat-raised-button color="accent" (click)="onSub4()">Submit</button>
-                  </form>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele2" [(ngModel)]="h2">
           </div>
-          <li class="q"><img src="../../assets/arrow.png"> RENAL FUNCTION TEST</li>
-          <div class="cont_a">
-                  <form action="/action_page.php">
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">Blood Urea: </span></label>
-                    </div> <input type="text" name="ele1" [(ngModel)]="r1"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Creatinine: </span></label>
-                    </div> <input type="text" name="ele2" [(ngModel)]="r2"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Uric Acid:  </span></label>
-                    </div><input type="text" name="ele3" [(ngModel)]="r3"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Phosphorus:</span></label>
-                    </div> <input type="text" name="ele4" [(ngModel)]="r4"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
-                      </div><input type="text" name="ele5" [(ngModel)]="r5"><br>
-                      <div class="col-25">
-                        <label for="fname" class="h4"><span class="sp1"> S. Magnesium: </span></label>
-                      </div> <input type="text" name="ele6" [(ngModel)]="r6"><br>
-                      <button mat-raised-button color="accent" (click)="onSub5()">Submit</button>
-                  </form>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> D.L.C</span></label>
           </div>
-          <li class="q"><img src="../../assets/arrow.png"> SERUM ELECTROLYTES</li>
-          <div class="cont_a">
-                  <form action="/action_page.php">
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Sodium:  </span></label>
-                    </div><input type="text" name="ele1" [(ngModel)]="s1"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1">S. Potassium:</span></label>
-                    </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> Magnesium:</span></label>
-                    </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> Phosphorus:</span></label>
-                    </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
-                    </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
-                    <div class="col-25">
-                      <label for="fname" class="h4"><span class="sp1"> Chloride: </span></label>
-                    </div><input type="text" name="ele6" [(ngModel)]="s6"><br>
-                      <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
-                  </form>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele3" [(ngModel)]="h3">
           </div>
-      </ul>
-  </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Neutrophils</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele4" [(ngModel)]="h4">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Lymphocytes</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele5" [(ngModel)]="h5">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Monocytes</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele6" [(ngModel)]="h6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Eosinophills</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele7" [(ngModel)]="h7">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Basophils</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele8" [(ngModel)]="h8">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> M.P Card</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele9" [(ngModel)]="h9">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> E.S.R</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele10" [(ngModel)]="h10">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> R.B.C</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele11" [(ngModel)]="h11">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Paletelet Count</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele12" [(ngModel)]="h12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Absoulte Eosinophills</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele13" [(ngModel)]="h13">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Bleeding Time</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele14" [(ngModel)]="h14">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Coagulation Time</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele15" [(ngModel)]="h15">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Blood Group</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele16" [(ngModel)]="h16">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Sputum for AFB</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele17" [(ngModel)]="h17">
+          </div>
+        </div>
+        <button mat-raised-button color="accent" (click)="onSub1()">Submit</button>
+      </form>
+    </div>
+    <li class="q"><img src="../../assets/arrow.png"> BLOOD BIOCHEMICAL PROFILE</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Blood Glucose Fasting</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele1" [(ngModel)]="u1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname" class="h4"><span class="sp1"> Blood Glucose(PP)</span></label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="ele2" [(ngModel)]="u2">
+          </div>
+        </div>
+        <!-- <div class="row"> -->
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Blood Glucose Random</span></label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="ele3" [(ngModel)]="u3">
+        </div>
+        <!-- </div> -->
+        <button mat-raised-button color="accent" (click)="onSub2()">Submit</button>
+      </form>
+    </div>
+    <li class="q"><img src="../../assets/arrow.png"> LIQUID PROFILE</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Cholesrerol:</span></label>
+        </div><label for="chol"></label> <input type="text" name="ele1" [(ngModel)]="l1"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. HDL Cholesrerol:</span></label>
+        </div><label for="chol"> </label> <input type="text" id="chol" name="ele2" [(ngModel)]="l2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. VLDL Cholesrerol: </span></label>
+        </div>
+        <input type="text" name="ele3" [(ngModel)]="l3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. LDL Cholesrerol: </span></label>
+        </div><input type="text" name="ele4" [(ngModel)]="l4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Triglycerides: </span></label>
+        </div> <input type="text" name="ele5" [(ngModel)]="l5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Chol HDL Ratio:</span></label>
+        </div> <input type="text" name="ele6" [(ngModel)]="l6"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. LDL HDL Ratio:</span></label>
+        </div> <input type="text" name="ele7" [(ngModel)]="l7"><br>
+        <button mat-raised-button color="accent" (click)="onSub3()">Submit</button>
+      </form>
+    </div>
+    <li class="q"><img src="../../assets/arrow.png"> LIVER FUNCTION TEST</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Serum G.O.T(AST): </span></label>
+        </div>
+        <input type="text" name="ele1" [(ngModel)]="lv1"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Serum G.P.T(ALT): </span></label>
+        </div><input type="text" name="ele2" [(ngModel)]="lv2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Total S. Bilirubin: </span></label>
+        </div><input type="text" name="ele3" [(ngModel)]="lv3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Direct:</span></label>
+        </div><input type="text" name="ele4" [(ngModel)]="lv4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">Indirect: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="lv5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Alk Phosphatase: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="lv6"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Total Proteins: </span></label>
+        </div><input type="text" name="ele7" [(ngModel)]="lv7"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Albumin:</span></label>
+        </div><input type="text" name="ele8" [(ngModel)]="lv8"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">Globulin:</span></label>
+        </div><input type="text" name="ele9" [(ngModel)]="lv9"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> AG Ratio: </span></label>
+        </div><input type="text" name="ele10" [(ngModel)]="lv10"><br>
+        <button mat-raised-button color="accent" (click)="onSub4()">Submit</button>
+      </form>
+    </div>
+    <li class="q"><img src="../../assets/arrow.png"> RENAL FUNCTION TEST</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">Blood Urea: </span></label>
+        </div> <input type="text" name="ele1" [(ngModel)]="r1"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Creatinine: </span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="r2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Uric Acid: </span></label>
+        </div><input type="text" name="ele3" [(ngModel)]="r3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Phosphorus:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="r4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="r5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Magnesium: </span></label>
+        </div> <input type="text" name="ele6" [(ngModel)]="r6"><br>
+        <button mat-raised-button color="accent" (click)="onSub5()">Submit</button>
+      </form>
+    </div>
+    <li class="q"><img src="../../assets/arrow.png"> SERUM ELECTROLYTES</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Sodium: </span></label>
+        </div><input type="text" name="ele1" [(ngModel)]="s1"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Potassium:</span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Magnesium:</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Phosphorus:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Chloride: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
+      </form>
+    </div>
+
+    <!-- Serological Test -->
+
+    <li class="q"><img src="../../assets/arrow.png"> SEROLOGICAL TEST</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">HIV: </span></label>
+        </div><input type="text" name="ele1" [(ngModel)]="s1"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">HCV:</span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Australia Antigen (Hbs Ag):</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> VDRL:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> C-RP: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> R.A. FACTOR: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Mantoux Test: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <label class="h4"> <strong> Dengue Antibodies</strong></label>
+
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">1g G: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">1g M: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+
+        <label class="h4"> <strong> Widal</strong></label>
+
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">1g G: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">1g M: </span></label>
+        </div>
+        <input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <p>WIDAL TABLE TEST</p>
+
+        <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
+      </form>
+    </div>
+
+    <!-- URINE EXAMINATION REPORT -->
+
+    <li class="q"><img src="../../assets/arrow.png"> URINE EXAMINATION REPORT</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <strong>Physical Examination</strong> <br> <br>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <label for="vol" class="h4"> <span class="sp1">Volume: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label class="h4"><span class="sp1">Reaction: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="h4"><span class="sp1">Volume: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label  class="h4"><span class="sp1">Reaction: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="h4"><span class="sp1">Colour: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Sugar: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="vol" class="h4"><span class="sp1">Turbidity: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" id="vol" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Albumin: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="vol" class="h4"><span class="sp1">Deposit: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" id="vol" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Acetone: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="vol" class="h4"><span class="sp1">Odour: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" id="vol" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Urobilinogen: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="vol" class="h4"><span class="sp1">Specific Gravity: </span></label>
+            </div>
+              <div class="col">
+              <input type="text" id="vol" name="fname" [(ngModel)]="s1"><br>
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Bile Pigments: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            </div>
+              <div class="col">
+            </div>
+
+            <div class="col">
+              <label for="fname" class="h4"><span class="sp1">Bile Pigments: </span></label>
+            </div>
+             <div class="col"> <input type="text" name="ele1" [(ngModel)]="s1">
+            </div>
+          </div> <br>
+        <p><strong>Microscopic Examination</strong></p> <br>
+
+        <div class="col-15">
+          <label for="fname" class="h4"><span class="sp1">HPF: </span></label>
+        </div>
+        <span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+        <div class="col-15">
+          <label for="fname" class="h4"><span class="sp1">RBCs: </span></label>
+        </div>
+        <span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+        <div class="col-15">
+          <label for="fname" class="h4"><span class="sp1">Leucocytes <br>/Plus Cells: </span></label>
+        </div>
+        <span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+        <div class="col-15">
+          <label for="fname" class="h4"><span class="sp1">Epithelial Cells: </span></label>
+        </div>
+        <span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+        <div class="col-15">
+          <label for="fname" class="h4"><span class="sp1">others: </span></label>
+        </div>
+        <span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+      </div>
+
+        <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
+      </form>
+    </div>
+
+    <!-- PREGNANCY TEST   -->
+
+    <!-- <li class="q"><img src="../../assets/arrow.png"> PREGNANCY TEST</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Sodium: </span></label>
+        </div><span><input type="text" name="ele1" [(ngModel)]="s1"></span><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1">S. Potassium:</span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Magnesium:</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Phosphorus:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> S. Calcium: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
+        <div class="col-25">
+          <label for="fname" class="h4"><span class="sp1"> Chloride: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="s6"><br>
+
+        <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
+      </form>
+    </div> -->
+
+    <!-- STOOL EXAMINATION REPORT -->
+    <li class="q"><img src="../../assets/arrow.png"> STOOL EXAMINATION REPORT</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <strong>
+          <p>Macroscopic Examination:</p>
+        </strong>
+        <div class="col-25">
+          <label class="h4"><span class="sp1">Colour: </span></label>
+        </div><input type="text" name="ele1" [(ngModel)]="s1"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1">Consistency & Appearance:</span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="s2"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Blood:</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="s3"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Mucus:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="s4"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Parasite: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="s5"><br>
+
+        <strong>
+          <p>Microscopic Examination:</p>
+        </strong>
+
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Protozoa: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="s6"><br>
+        <button mat-raised-button color="accent" (click)="onSub6()">Submit</button>
+      </form>
+    </div>
+
+    <!-- SEMEN EXAMINATION REPORT -->
+    <li class="q"><img src="../../assets/arrow.png"> SEMEN EXAMINATION REPORT</li>
+    <div class="cont_a">
+      <form action="/action_page.php">
+        <strong>
+          <p>Macroscopic Examination:</p>
+        </strong>
+        <div class="col-25">
+          <label class="h4"><span class="sp1">Quantity: </span></label>
+        </div><input type="text" name="ele1" [(ngModel)]="sm1"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1">Appearance:</span></label>
+        </div> <input type="text" name="ele2" [(ngModel)]="sm2"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Liquefaction:</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="sm3"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Reaction:</span></label>
+        </div> <input type="text" name="ele3" [(ngModel)]="sm4"><br>
+
+        <strong>
+          <p>Microscopic Examination:</p>
+        </strong>
+
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Active Sperm:</span></label>
+        </div> <input type="text" name="ele4" [(ngModel)]="sm5"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Dead Sperm: </span></label>
+        </div><input type="text" name="ele5" [(ngModel)]="sm6"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Slugish: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm7"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Epithelial: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm8"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Pus Cells: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm9"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> RBSs: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm10"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Any other Abnormality: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm11"><br>
+        <div class="col-25">
+          <label class="h4"><span class="sp1"> Total Spermatic Count: </span></label>
+        </div><input type="text" name="ele6" [(ngModel)]="sm12"><br>
+        <button mat-raised-button color="accent" (click)="onSub10()"> Submit</button>
+      </form>
+    </div>
+  </ul>
+</div>

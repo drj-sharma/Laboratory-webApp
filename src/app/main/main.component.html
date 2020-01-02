@@ -14,13 +14,18 @@
     <div class="container">
         <form id="survey-form">
             <div class="form-group d-flex">
-            <h5>  <label for="patient" class="l1"> <strong> Name: </strong>&nbsp;</label></h5>
+            <h4>  <label for="patient" class="l1"> <strong> Name: </strong>&nbsp;</label></h4>
                 <input class="form-control" type="text" id="kname" name="pname" placeholder="Patient's Name" [(ngModel)]="name" >
             </div>
             
 <br>
+<div class="form-group d-flex">
+    <h4>  <label for="patient" class="l1"> <strong> Age: </strong>&nbsp;</label></h4>
+        <input class="form-control" type="text" id="age" name="page" placeholder="Enter Age" [(ngModel)]="age" >
+    </div>
+<br>
             <div class="form-group d-flex">
-                <h5>  <label for="gender" class="l1"> <strong> Gender: </strong>&nbsp;</label></h5>
+                <h4>  <label for="gender" class="l1"> <strong> Gender: </strong>&nbsp;</label></h4>
                 <select class="form-control  inputSame" id="gender" name="gen" [(ngModel)]="gen">
                   <option value="">Select</option>
                     <option value="male" >Male</option>
@@ -29,18 +34,18 @@
             </div>
 <br>
             <div class="form-group d-flex">
-                <h5>  <label for="specimen" class="l1"> <strong>Specimen: </strong>&nbsp;</label></h5>
+                <h4>  <label for="specimen" class="l1"> <strong>Specimen: </strong>&nbsp;</label></h4>
                     <input class="form-control" id="specimen" type="text" id="name" name="spec" placeholder="Enter Specimen" [(ngModel)]="spec">
                 </div>
 <br>
 
             <div class="form-group d-flex">
-                <h5>  <label for="srno" class="l1"> <strong>Phone no: </strong>&nbsp;</label></h5>
+                <h4>  <label for="srno" class="l1"> <strong>Phone no: </strong>&nbsp;</label></h4>
                     <input class="form-control" id="srno" type="text" id="name" name="ph" placeholder="Enter Ph. No." [(ngModel)]="phNum">
                 </div>
             <br>
             <div class="form-group d-flex">
-                <h5>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h5>
+                <h4>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h4>
                     <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name">
                 </div> <br>
             <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button> <br>

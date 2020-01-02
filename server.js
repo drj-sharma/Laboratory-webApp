@@ -5,7 +5,7 @@ var bodyparser = require("body-parser");
 
 // for CORS
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4202');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -31,6 +31,7 @@ app.use(function (req, res, next) {
 var patientSchema = new mongoose.Schema(
   {
     Name: String,
+    Age: Number,
     Sex: String,
     Phone: Number,
     Specimen: String,
@@ -118,6 +119,18 @@ var serumSchema = new mongoose.Schema(
 );
 var serum = mongoose.model("serumElectrolytes", serumSchema, "serumElectrolytes");
 
+// report semen data
+var semenSchema = new mongoose.Schema(
+  {
+    id: String,
+    semenarr: Array
+  },
+  {
+    versionKey: false
+  }
+);
+var semen = mongoose.model("semenExamination", semenSchema, "semenExamination");
+
 // bodyparser for json type data handling in the form of req and res body
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
@@ -149,6 +162,7 @@ app.post("/api/patientinfo", function (req, res) {
   var newpatient = new patientinfo(
     {
       Name: req.body.nm,
+      Age: req.body.age,
       Sex: req.body.gen,
       Phone: req.body.ph,
       Specimen: req.body.speci,
@@ -293,6 +307,26 @@ app.post("/api/report-serum", function (req, res) {
   });
 });
 
+// save report-semen of patients
+app.post("/api/report-semen", function (req, res) {
+  console.log(req.body);
+  mongoose.connect("mongodb://localhost/labdb");
+  var newsemen = new semen(
+    {
+      id: req.body.id,
+      semenarr: req.body.sm
+    });
+
+  newsemen.save(function (err) {
+    if (err) {
+      console.log(err);
+      res.send("Error while saving");
+    } else {
+      res.send("Save semen report");
+    }
+    mongoose.connection.close();
+  });
+});
 
 // fetch patient-data
 app.get("/api/fetchpatients", function (req, res) {
@@ -438,7 +472,6 @@ app.get("/api/serum-rep", function (req, res) {
     mongoose.connection.close();
   });
 });
-
 
 
 app.listen(3000, () => {

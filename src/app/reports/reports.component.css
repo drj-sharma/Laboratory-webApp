@@ -27,6 +27,11 @@ ul,li{
     width: 25%;
     margin-top: 6px;
   }
+  .col-15 {
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+  }
   
   .col-75 {
     float: left;
@@ -75,8 +80,6 @@ ul,li{
   vertical-align: middle;
 }
 
-
-
 input[type=text], select, textarea {
     padding: 6px;
     font-size: 13px;
@@ -110,4 +113,22 @@ input[type=text], select, textarea {
 .right {
   margin-right: 20px;
   float: right;
+}
+/* 
+span input {
+  padding: 6px;
+    font-size: 13px;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    resize: vertical;
+} */
+
+.col label {
+  padding-left: 20px;
+}
+.col input {
+  width: 100%;
 }
