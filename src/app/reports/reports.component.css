@@ -132,3 +132,19 @@ span input {
 .col input {
   width: 100%;
 }
+
+strong {
+  color: black;
+  font-size: 25px;
+}
+
+#form>span {
+  display: inline-block;
+  padding-top: 5px;
+  margin-left: -16px;
+}
+.rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+}

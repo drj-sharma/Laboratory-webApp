@@ -27,9 +27,9 @@ export class ReportsComponent implements OnInit {
   h16: string;
   h17: string;
 
-  u1: string;
-  u2: string;
-  u3: string;
+  b1: string;
+  b2: string;
+  b3: string;
 
   l1: string;
   l2: string;
@@ -77,17 +77,24 @@ export class ReportsComponent implements OnInit {
   sm11: string;
   sm12: string;
 
+  u1: string;u2: string;u3: string;u4: string;u5: string;u6: string;u7: string;u8: string;u9: string;u10: string;u11: string;u12: string;u13: string;u14: string;u15: string;u16: string;u17: string;u18: string;
+
+  sr1: string;sr2: string;sr3: string;sr4: string;sr5: string;sr6: string;sr7: string;sr8: string;sr9: string;sr10: string;sr11: string;
+
+  st1: string;st2: string;st3: string;st4: string;st5: string;st6: string;st7: string;st8: string;st9: string;st10: string;st11: string;st12: string;st13: string;st14: string;st15: string;st16: string;st17: string;st18: string;st19: string;st20: string;st21: string;st22: string;st23: string;st24: string;st25: string;st26: string;st27: string;st28: string;
 
   id: string;
   sub: any;
-  haemaRep: any;
-  urineRep: any;
-  liquidRep: any;
-  liquidPro: any;
+  haemaRep: string[];
+  bloodRep: string[];
+  liquidRep: string[];
   liverRep: string[];
   renalRep: string[];
   serumRep: string[];
   semenRep: string[];
+  urineRep: string[];
+  serolRep: string[];
+  serolWidalRep: string[];
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
@@ -126,13 +133,13 @@ export class ReportsComponent implements OnInit {
       );
   }
   onSub2() {
-    this.urineRep = [this.u1, this.u2, this.u3];
-    const urine =  {
+    this.bloodRep = [this.b1, this.b2, this.b3];
+    const blood =  {
       id: this.id,
-      ur: this.urineRep
+      bl: this.bloodRep
     };
-    console.log(urine);
-    this.http.post('http://localhost:3000/api/report-urine', urine, {responseType: 'text'}).subscribe(
+    console.log(blood);
+    this.http.post('http://localhost:3000/api/report-blood', blood, {responseType: 'text'}).subscribe(
       (res)=> console.log(res),
       (err) => console.log(err)
       );
@@ -181,6 +188,32 @@ export class ReportsComponent implements OnInit {
     };
     console.log(serum);
     this.http.post('http://localhost:3000/api/report-serum', serum, {responseType: 'text'}).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+      );
+  }
+  onSub7() {
+    this.serolRep = [this.sr1, this.sr2, this.sr3, this.sr4, this.sr5, this.sr6, this.sr7, this.sr8, this.sr9, this.sr10, this.sr11];
+    this.serolWidalRep = [this.st1, this.st2, this.st3, this.st4, this.st5, this.st6, this.st7, this.st8, this.st9, this.st10, this.st11, this.st12, this.st13, this.st14, this.st15, this.st16, this.st17, this.st18, this.st19, this.st20, this.st21, this.st22, this.st23, this.st24, this.st25, this.st26, this.st27, this.st28 ]
+    const serol =  {
+      id: this.id,
+      sl: this.serolRep,
+      slwd: this.serolWidalRep
+    };
+    console.log(serol);
+    this.http.post('http://localhost:3000/api/report-serol', serol, {responseType: 'text'}).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+      );
+  };
+  onSub8() {
+    this.urineRep = [this.u1, this.u2, this.u3, this.u4, this.u5, this.u6, this.u7, this.u8, this.u9, this.u10, this.u11, this.u12, this.u13, this.u14, this.u15, this.u16, this.u17, this.u18];
+    const urine =  {
+      id: this.id,
+      ur: this.urineRep
+    };
+    console.log(urine);
+    this.http.post('http://localhost:3000/api/report-urine', urine, {responseType: 'text'}).subscribe(
       (res)=> console.log(res),
       (err) => console.log(err)
       );
