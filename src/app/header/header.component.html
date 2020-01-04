@@ -1,10 +1,9 @@
 <nav *ngIf="vis">
     <ul>
       <li><a routerLink="/main">Home</a></li>
-      <li><a href="#">Edit Patient Details</a></li>
       <li><a [routerLink]="['/searchpatient']">Search Patient Details</a></li>
       <li><a [routerLink]="['/allpatients']">All Patient Details</a></li>
-      <li><a href="#">About Admin</a></li>
+      <li><a [routerLink]="['about']">About</a></li>
       <li><a href="#" (click)="logout()">Logout</a></li>
     </ul>
   </nav>

@@ -235,18 +235,17 @@ app.post("/api/report-haemo", function (req, res) {
 // save report-urine of patients
 app.post("/api/report-blood", function (req, res) {
   console.log(req.body);
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
-  var newblood = new blood(
-    {
-      id: req.body.id,
-      bloodarr: req.body.bl
-    });
-
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
+  var newblood = new blood({
+    id: req.body.id,
+    bloodarr: req.body.bl
+  });
   newblood.save(function (err) {
     if (err) {
       console.log(err);
       res.send("Error while saving");
-    } else {
+    }
+    else {
       res.send("Save blood report");
     }
     mongoose.connection.close();
@@ -440,9 +439,8 @@ app.get("/api/fetchpatientbyid", function (req, res) {
 
 // get user haemo by id
 app.get("/api/haemo-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   haemo.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -458,9 +456,8 @@ app.get("/api/haemo-rep", function (req, res) {
 
 // get user urine report data by id
 app.get("/api/blood-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   blood.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -476,9 +473,8 @@ app.get("/api/blood-rep", function (req, res) {
 
 // get user liquid report by id
 app.get("/api/liquid-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   liquid.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -494,9 +490,8 @@ app.get("/api/liquid-rep", function (req, res) {
 
 // get user urine report by id
 app.get("/api/urine-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   urine.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -512,9 +507,8 @@ app.get("/api/urine-rep", function (req, res) {
 
 // get user urine report by id
 app.get("/api/semen-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   semen.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -530,9 +524,8 @@ app.get("/api/semen-rep", function (req, res) {
 
 // get user urine report by id
 app.get("/api/serol-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   serol.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -549,9 +542,8 @@ app.get("/api/serol-rep", function (req, res) {
 
 // get user liver report by id
 app.get("/api/liver-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   liver.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -567,9 +559,8 @@ app.get("/api/liver-rep", function (req, res) {
 
 // get user renal report by id
 app.get("/api/renal-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   renal.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);
@@ -585,9 +576,8 @@ app.get("/api/renal-rep", function (req, res) {
 
 // get user serum report data by id
 app.get("/api/serum-rep", function (req, res) {
-  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+  mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true, poolSize: 10 });
   console.log(req.query);
-
   serum.find({ id: req.query.id }, function (err, data) {
     if (err) {
       console.log(err);

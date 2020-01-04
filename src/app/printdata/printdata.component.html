@@ -1,20 +1,22 @@
 <section id="container">
   <button mat-fab (click)="printPage()">
     <mat-icon>print</mat-icon>
-  </button> <br><br><br>
+  </button> <button class="d-print-none" style="float: right;" mat-fab (click)="backToMain()">
+    <mat-icon>home</mat-icon>
+  </button><br><br><br>
   <table cellspacing="6" style="border: 1px solid black;">
     <div *ngFor="let item of patients">
       <tr>
-        <td style="padding-left:30px;">
+        <td style="padding-left:70px;">
           Name: <strong>{{item.Name | titlecase }}</strong> </td>
-        <td>Date: <strong> {{item.Date | date: 'shortDate'}} </strong></td>
+        <td>Date: <strong> {{item.Date | date: 'short'}} </strong></td>
 
       </tr>
       <hr>
 
 
       <tr>
-        <td style="padding-left:30px;">
+        <td style="padding-left:70px;">
           Age: <strong>{{item.Age }} </strong> </td>
         <td> Sex: <strong>{{item.Sex | titlecase }} </strong> </td>
 
@@ -22,7 +24,7 @@
       </tr>
       <hr>
       <tr>
-        <td style="padding-left:30px;">Ref. Doctor: <strong> {{item.Refdoc | titlecase}} </strong></td>
+        <td style="padding-left:70px;">Ref. Doctor: <strong> {{item.Refdoc | titlecase}} </strong></td>
         <td> Specimen: <strong> {{item.Specimen | titlecase }}</strong></td>
       </tr>
     </div>
@@ -33,8 +35,11 @@
     <strong> HAEMATOLOGY PROFILE</strong>
     <table>
       <tr *ngFor="let item of haemoArr">
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.haemoarr[0] === null">
-          <td>Haemoglobin: <span> {{item.haemoarr[0]}}&nbsp;gm/dl(M:13-18, F:12-15 gm%)</span></td>
+          <td>Haemoglobin: <span> {{item.haemoarr[0]}}&nbsp;gm/dl (M:12-16, F:11-14 gm/dl)</span></td>
         </div>
         <div [hidden]="item.haemoarr[1] === null">
           <td>T.L.C: <span>{{item.haemoarr[1]}}/cumm (4000-11000 of cumm)</span></td>
@@ -94,7 +99,9 @@
     <br> <strong>BLOOD BIOCHEMICAL PROFILE</strong>
     <table>
       <tr *ngFor="let item of bloodArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.bloodarr[0] === null">
           <td> Blood Glucose Fasting: <span>{{item.bloodarr[0]}}mg/dl (N: 60-100mg/dl) </span> </td>
         </div>
@@ -108,27 +115,29 @@
     </table>
   </div>
 
-  <!-- LIQUID PROFILE -->
+  <!-- LIPID PROFILE -->
   <div *ngIf="liquidBool" style="text-align: center;">
-    <br> <strong>LIQUID PROFILE</strong>
+    <br> <strong>LIPID PROFILE</strong>
     <table>
       <tr *ngFor="let item of liquidArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.liquidarr[0] === null">
-          <td> S. Cholesrerol: <span>{{item.liquidarr[0]}}mg/dl (N: &lt;200 mg/dl) </span> </td>
+          <td> S. Cholesrerol: <span>{{item.liquidarr[0]}}&nbsp;mg/dl (N: &lt;200 mg/dl) </span> </td>
         </div>
         <div [hidden]="item.liquidarr[1] === null">
           <td>
-            S. HDL Cholesrerol: <span>{{item.liquidarr[1]}}mg/dl (N: 29-67 mg/dl) </span></td>
+            S. HDL Cholesrerol: <span>{{item.liquidarr[1]}}&nbsp;mg/dl (N: 29-67 mg/dl) </span></td>
         </div>
         <div [hidden]="item.liquidarr[2] === null">
-          <td>S. VLDL Cholesrerol: <span>{{item.liquidarr[2]}}mg/dl (N: 5-32 mg/dl) </span></td>
+          <td>S. VLDL Cholesrerol: <span>{{item.liquidarr[2]}}&nbsp;mg/dl (N: 5-32 mg/dl) </span></td>
         </div>
         <div [hidden]="item.liquidarr[3] === null">
-          <td>S. LDL Cholesrerol: <span>{{item.liquidarr[3]}}mg/dl (N: &lt;130 mg/dl)</span></td>
+          <td>S. LDL Cholesrerol: <span>{{item.liquidarr[3]}}&nbsp;mg/dl (N: &lt;130 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liquidarr[4] === null">
-          <td>S. Triglycerides: <span>{{item.liquidarr[4]}}mg/dl (N: 35-160 mg/dl)</span></td>
+          <td>S. Triglycerides: <span>{{item.liquidarr[4]}}&nbsp;mg/dl (N: 35-160 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liquidarr[5] === null">
           <td>S. Chol HDL Ratio: <span>{{item.liquidarr[5]}}&nbsp;(N: &lt;5.1)</span></td>
@@ -145,22 +154,24 @@
     <br> <strong>LIVER FUNCTION TEST</strong>
     <table>
       <tr *ngFor="let item of liverArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.liverarr[0] === null">
-          <td> Serum G.O.T(AST): <span>{{item.liverarr[0]}} &nbsp;U/L(N: 5-35 U/L) </span> </td>
+          <td> Serum G.O.T(AST): <span>{{item.liverarr[0]}} &nbsp;U/L (N: 5-35 U/L) </span> </td>
         </div>
         <div [hidden]="item.liverarr[1] === null">
           <td>
-            Serum G.P.T(ALT): <span>{{item.liverarr[1]}}&nbsp;U/L(N: 7-40 U/L)</span></td>
+            Serum G.P.T(ALT): <span>{{item.liverarr[1]}}&nbsp;U/L (N: 7-40 U/L)</span></td>
         </div>
         <div [hidden]="item.liverarr[2] === null">
-          <td>Total S. Bilirubin: <span>{{item.liverarr[2]}}&nbsp;mg/dl(N: 0.2-1.0 mg/dl)</span></td>
+          <td>Total S. Bilirubin: <span>{{item.liverarr[2]}}&nbsp;mg/dl (N: 0.2-1.0 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[3] === null">
-          <td>Direct: <span>{{item.liverarr[3]}}&nbsp;mg/dl(N: 0.2-0.4 mg/dl)</span></td>
+          <td>Direct: <span>{{item.liverarr[3]}}&nbsp;mg/dl (N: 0.2-0.4 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[4] === null">
-          <td>Indirect: <span>{{item.liverarr[4]}}&nbsp;mg/dl(N: 0.2-0.6 mg/dl)</span></td>
+          <td>Indirect: <span>{{item.liverarr[4]}}&nbsp;mg/dl (N: 0.2-0.6 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[5] === null">
           <td>S. Alk Phosphatase: <span>{{item.liverarr[5]}} &nbsp;IU/L</span></td>
@@ -186,7 +197,9 @@
     <br> <strong>RENAL FUNCTION TEST</strong>
     <table>
       <tr *ngFor="let item of renalArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.renalarr[0] === null">
           <td> Blood Urea: <span>{{item.renalarr[0]}}&nbsp;mg/dl (N: 15-45 mg/dl)</span> </td>
         </div>
@@ -214,7 +227,9 @@
     <br> <strong>SERUM ELECTROLYTES</strong>
     <table>
       <tr *ngFor="let item of serumArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.serumarr[0] === null">
           <td> S. Sodium: <span>{{item.serumarr[0]}}&nbsp;mmol/L (N: 136-145 mmol/L)</span> </td>
         </div>
@@ -242,7 +257,9 @@
     <strong> SEROLOGICAL TEST</strong>
     <table>
       <tr *ngFor="let item of serolArr">
-
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.serolarr[0] === null">
           <td>HIV: <span>{{item.serolarr[0]}}</span> </td>
         </div>
@@ -314,6 +331,9 @@
     <br> <strong>URINE EXAMINATION REPORT</strong>
     <table>
       <tr *ngFor="let item of urineArr">
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.urinearr[0] === null">
           <td> <strong> Physical Examination</strong></td> <br>
           <td> Volume: <span>{{item.urinearr[0]}}</span></td>
@@ -378,6 +398,9 @@
     <br> <strong>SEMEN EXAMINATION REPORT</strong>
     <table>
       <tr *ngFor="let item of semenArr">
+        <div>
+          <td> <strong>Test Description</strong> <span> Value Observes</span></td> <hr>
+        </div>
         <div [hidden]="item.semenarr[0] === null">
           <td> Quantity: <span>{{item.semenarr[0]}}</span> </td>
         </div>

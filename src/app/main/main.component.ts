@@ -18,7 +18,11 @@ export class MainComponent implements OnInit {
   msg: string;
 
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    if (sessionStorage.length === 0) {
+      this.router.navigateByUrl('');
+    }
+  }
 
   ngOnInit() {
   }

@@ -5,7 +5,7 @@
     padding: 20px;
 }
 table {
-    width: 60%;
+    width: 70%;
     margin-top: 30px;
     margin-left:auto;
     margin-right:auto;
@@ -14,9 +14,9 @@ table {
 
 table div td {
     /* float: left; */
+    padding-left: 10px;
     width: 3%;
-    
-    
+    text-align: left;   
 }
 
 
@@ -29,6 +29,12 @@ button {
 }
 
 span {
+    font-weight: bold;
     float: right;
     width: 40%;
 }
+@media print {
+    .hidden-print {
+      display: none !important;
+    }
+  }

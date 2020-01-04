@@ -11,7 +11,11 @@ export class AllpatientComponent implements OnInit {
 
   patients:[];
   msg: String;
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    if (sessionStorage.length === 0) {
+      this.router.navigateByUrl('');
+    }
+  }
 
   ngOnInit() {
     this.fetchPatientData();

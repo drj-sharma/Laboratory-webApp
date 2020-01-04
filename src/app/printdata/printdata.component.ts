@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Route } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-printdata',
   templateUrl: './printdata.component.html',
@@ -31,7 +32,11 @@ export class PrintdataComponent implements OnInit {
   semenBool = false;
   serolBool = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private _router: Router) { 
+    if (sessionStorage.length === 0) {
+      this._router.navigateByUrl('');
+    }
+  }
 
   ngOnInit() {
 
@@ -57,6 +62,9 @@ export class PrintdataComponent implements OnInit {
 
   printPage() {
     window.print();
+  }
+  backToMain() {
+    this._router.navigate(['/main']);
   }
 
   fetchHaemo() {
