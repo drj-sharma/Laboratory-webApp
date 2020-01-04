@@ -13,7 +13,11 @@ export class LoginComponent implements OnInit {
   msg: string;
   userInfo: any[];
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { 
+    if (sessionStorage.length > 0) {
+      this.router.navigateByUrl('/main');
+    }
+  }
 
   logIn() {
 

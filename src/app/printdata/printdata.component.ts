@@ -52,12 +52,13 @@ export class PrintdataComponent implements OnInit {
     this.http.get('http://localhost:3000/api/fetchpatientbyid?id=' + this.id, { responseType: 'json' }).subscribe(
       (res: []) => {
         console.log(res);
-        if (res.length > 0) this.patients = res;
+        if (res.length > 0) {this.patients = res;
         console.log(this.patients);
+        this.fetchHaemo();
+        }
       },
       (err) => this.msg = err
     );
-    this.fetchHaemo();
   }
 
   printPage() {
