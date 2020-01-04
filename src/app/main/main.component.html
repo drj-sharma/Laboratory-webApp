@@ -46,7 +46,7 @@
             <br>
             <div class="form-group d-flex">
                 <h4>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h4>
-                    <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name">
+                    <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name" [(ngModel)]="refdoc">
                 </div> <br>
             <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button> <br>
         </form>

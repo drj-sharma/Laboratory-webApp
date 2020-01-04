@@ -35,9 +35,8 @@ var patientSchema = new mongoose.Schema(
     Sex: String,
     Phone: Number,
     Specimen: String,
+    Refdoc: String,
     Date: Date
-    //heamaArr: { },
-    //urineArr: { },
   },
   {
     versionKey: false
@@ -195,6 +194,7 @@ app.post("/api/patientinfo", function (req, res) {
       Sex: req.body.gen,
       Phone: req.body.ph,
       Specimen: req.body.speci,
+      Refdoc: req.body.ref,
       Date: Date.now()
       // heamaArr: req.body.heamaR
     });

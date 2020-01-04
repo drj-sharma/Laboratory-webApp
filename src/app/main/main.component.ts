@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   age: number;
   gen = '';
   phNum: number;
-  drName: string;
+  refdoc: string;
   msg: string;
 
 
@@ -30,6 +30,7 @@ export class MainComponent implements OnInit {
       ph: this.phNum,
       gen: this.gen,
       speci: this.spec,
+      ref: this.refdoc
     };
     // console.log(params);
     this.http.post('http://localhost:3000/api/patientinfo', params, {responseType: 'text'}).subscribe(

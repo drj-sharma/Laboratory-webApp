@@ -2,75 +2,87 @@
   <button mat-fab (click)="printPage()">
     <mat-icon>print</mat-icon>
   </button> <br><br><br>
-  <table>
-    <tr *ngFor="let item of patients">
-      <td>
-        Name: <strong>{{item.Name | titlecase }} </strong> <br> </td>
-        <td>
-          Age: <strong>{{item.Age }} </strong> <br> </td>
-      <td>
-        Sex: <strong>{{item.Sex | titlecase }} </strong> <br></td>
-      <td> Specimen: <strong> {{item.Specimen | titlecase }}</strong> <br></td>
-      <td>Date: <strong> {{item.Date | date: 'shortDate'}} </strong></td>
-    </tr>
+  <table cellspacing="6" style="border: 1px solid black;">
+    <div *ngFor="let item of patients">
+      <tr>
+        <td style="padding-left:30px;">
+          Name: <strong>{{item.Name | titlecase }}</strong> </td>
+        <td>Date: <strong> {{item.Date | date: 'shortDate'}} </strong></td>
 
+      </tr>
+      <hr>
+
+
+      <tr>
+        <td style="padding-left:30px;">
+          Age: <strong>{{item.Age }} </strong> </td>
+        <td> Sex: <strong>{{item.Sex | titlecase }} </strong> </td>
+
+
+      </tr>
+      <hr>
+      <tr>
+        <td style="padding-left:30px;">Ref. Doctor: <strong> {{item.Refdoc | titlecase}} </strong></td>
+        <td> Specimen: <strong> {{item.Specimen | titlecase }}</strong></td>
+      </tr>
+    </div>
   </table> <br> <br>
 
   <!-- HAEMATOLOGICAL REPORT -->
   <div *ngIf="haemoBool" style="text-align: center;">
     <strong> HAEMATOLOGY PROFILE</strong>
     <table>
-      <tr class="left" *ngFor="let item of haemoArr">
+      <tr *ngFor="let item of haemoArr">
         <div [hidden]="item.haemoarr[0] === null">
-          <td>Haemoglobin: {{item.haemoarr[0]}} </td>
+          <td>Haemoglobin: <span> {{item.haemoarr[0]}}&nbsp;gm/dl(M:13-18, F:12-15 gm%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[1] === null">
-          <td >T.L.C: {{item.haemoarr[1]}}</td>
+          <td>T.L.C: <span>{{item.haemoarr[1]}}/cumm (4000-11000 of cumm)</span></td>
         </div>
         <div [hidden]="item.haemoarr[2] === null">
-          <td class="left">D.L.C: {{item.haemoarr[2]}}</td>
+          <td>D.L.C: <span>{{item.haemoarr[2]}}/cumm</span></td>
         </div>
         <div [hidden]="item.haemoarr[3] === null">
-          <td class="left">Neutdophils: {{item.haemoarr[3]}}</td>
+          <td>Neutdophils: <span>{{item.haemoarr[3]}}% (40-70%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[4] === null">
-          <td class="left">Lymphocytes: {{item.haemoarr[4]}}</td>
+          <td>Lymphocytes: <span>{{item.haemoarr[4]}}% (20-40%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[5] === null">
-          <td class="left">Monocytes: {{item.haemoarr[5]}}</td>
+          <td>Monocytes: <span>{{item.haemoarr[5]}}% (02-10%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[6] === null">
-          <td class="left">Eosinophills: {{item.haemoarr[6]}}</td>
+          <td>Eosinophills: <span>{{item.haemoarr[6]}}% (02-06%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[7] === null">
-          <td class="left">Basophils: {{item.haemoarr[7]}}</td>
+          <td>Basophils: <span>{{item.haemoarr[7]}}% (upto 1%)</span></td>
         </div>
         <div [hidden]="item.haemoarr[8] === null">
-          <td class="left">M.P Card: {{item.haemoarr[8]}}</td>
+          <td>M.P Card: <span>{{item.haemoarr[8]}}</span></td>
         </div>
         <div [hidden]="item.haemoarr[9] === null">
-          <td class="left">E.S.R: {{item.haemoarr[9]}}</td>
+          <td>E.S.R: <span>{{item.haemoarr[9]}}&nbsp;mm 1st hours(N: 0-20mm)</span></td>
         </div>
         <div [hidden]="item.haemoarr[10] === null">
-          <td class="left">R.B.C: {{item.haemoarr[10]}}</td>
+          <td>R.B.C.: <span>{{item.haemoarr[10]}}/cumm (N: 4.5-5.5 Million/cumm) </span></td>
         </div>
         <div [hidden]="item.haemoarr[11] === null">
-          <td class="left">Paletelet Count: {{item.haemoarr[11]}}</td>
+          <td>Paletelet Count: <span>{{item.haemoarr[11]}}/cumm (N: 1,50,000-4,50,000)</span></td>
         </div>
         <div [hidden]="item.haemoarr[12] === null">
-          <td class="left">Absoulte Eosinophills: {{item.haemoarr[12]}}</td>
+          <td>Absoulte Eosinophills: <span>{{item.haemoarr[12]}}/cumm (40-400/cumm)</span></td>
         </div>
         <div [hidden]="item.haemoarr[13] === null">
-          <td class="left">Bleeding Time: {{item.haemoarr[13]}}</td>
+          <td>Bleeding Time: <span>{{item.haemoarr[13]}}&nbsp;min (N: 2-7 min)</span></td>
         </div>
         <div [hidden]="item.haemoarr[14] === null">
-          <td class="left">Coagulation Time: {{item.haemoarr[14]}}</td>
+          <td>Coagulation Time: <span>{{item.haemoarr[14]}}&nbsp;min (N: 3-11 min) </span></td>
         </div>
         <div [hidden]="item.haemoarr[15] === null">
-          <td class="left">Blood Group: {{item.haemoarr[15]}}</td>
+          <td>Blood Group: <span>{{item.haemoarr[15]}}</span></td>
         </div>
         <div [hidden]="item.haemoarr[16] === null">
-          <td class="left">Sputum for AFB: {{item.haemoarr[16]}}</td>
+          <td>Sputum for AFB: <span>{{item.haemoarr[16]}}</span></td>
         </div>
       </tr>
     </table>
@@ -79,18 +91,18 @@
   <!-- BLOOD EXAMINATION REPORT -->
 
   <div *ngIf="bloodBool" style="text-align: center;">
-    <br> <strong>BLOOD  BIOCHEMICAL PROFILE</strong>
+    <br> <strong>BLOOD BIOCHEMICAL PROFILE</strong>
     <table>
-      <tr class="left" *ngFor="let item of bloodArr">
+      <tr *ngFor="let item of bloodArr">
 
         <div [hidden]="item.bloodarr[0] === null">
-          <td class="left"> Blood Glucose Fasting: {{item.bloodarr[0]}} </td>
+          <td> Blood Glucose Fasting: <span>{{item.bloodarr[0]}}mg/dl (N: 60-100mg/dl) </span> </td>
         </div>
         <div [hidden]="item.bloodarr[1] === null">
-          <td> Blood Glucose(PP): {{item.bloodarr[1]}}</td>
+          <td> Blood Glucose(PP): <span>{{item.bloodarr[1]}}mg/dl (N: 70-140mg/dl) </span></td>
         </div>
         <div [hidden]="item.bloodarr[2] === null">
-          <td class="left"> Blood Glucose Random: {{item.bloodarr[2]}}</td>
+          <td> Blood Glucose Random: <span>{{item.bloodarr[2]}}mg/dl (N: 160mg/dl) </span></td>
         </div>
       </tr>
     </table>
@@ -100,29 +112,29 @@
   <div *ngIf="liquidBool" style="text-align: center;">
     <br> <strong>LIQUID PROFILE</strong>
     <table>
-      <tr class="left" *ngFor="let item of liquidArr">
+      <tr *ngFor="let item of liquidArr">
 
         <div [hidden]="item.liquidarr[0] === null">
-          <td class="left"> S. Cholesrerol: {{item.liquidarr[0]}} </td>
+          <td> S. Cholesrerol: <span>{{item.liquidarr[0]}}mg/dl (N: &lt;200 mg/dl) </span> </td>
         </div>
         <div [hidden]="item.liquidarr[1] === null">
           <td>
-            S. HDL Cholesrerol: {{item.liquidarr[1]}}</td>
+            S. HDL Cholesrerol: <span>{{item.liquidarr[1]}}mg/dl (N: 29-67 mg/dl) </span></td>
         </div>
         <div [hidden]="item.liquidarr[2] === null">
-          <td class="left">S. VLDL Cholesrerol: {{item.liquidarr[2]}}</td>
+          <td>S. VLDL Cholesrerol: <span>{{item.liquidarr[2]}}mg/dl (N: 5-32 mg/dl) </span></td>
         </div>
         <div [hidden]="item.liquidarr[3] === null">
-          <td class="left">S. LDL Cholesrerol: {{item.liquidarr[3]}}</td>
+          <td>S. LDL Cholesrerol: <span>{{item.liquidarr[3]}}mg/dl (N: &lt;130 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liquidarr[4] === null">
-          <td class="left">S. Triglycerides: {{item.liquidarr[4]}}</td>
+          <td>S. Triglycerides: <span>{{item.liquidarr[4]}}mg/dl (N: 35-160 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liquidarr[5] === null">
-          <td class="left">S. Chol HDL Ratio: {{item.liquidarr[5]}}</td>
+          <td>S. Chol HDL Ratio: <span>{{item.liquidarr[5]}}&nbsp;(N: &lt;5.1)</span></td>
         </div>
         <div [hidden]="item.liquidarr[6] === null">
-          <td class="left">S. LDL HDL Ratio: {{item.liquidarr[6]}}</td>
+          <td>S. LDL HDL Ratio: <span>{{item.liquidarr[6]}} (N: 2.5-3.5 High Rick &gt;3.5) </span></td>
         </div>
       </tr>
     </table>
@@ -132,38 +144,38 @@
   <div *ngIf="liverBool" style="text-align: center;">
     <br> <strong>LIVER FUNCTION TEST</strong>
     <table>
-      <tr class="left" *ngFor="let item of liverArr">
+      <tr *ngFor="let item of liverArr">
 
         <div [hidden]="item.liverarr[0] === null">
-          <td class="left">  Serum G.O.T(AST): {{item.liverarr[0]}} </td>
+          <td> Serum G.O.T(AST): <span>{{item.liverarr[0]}} &nbsp;U/L(N: 5-35 U/L) </span> </td>
         </div>
         <div [hidden]="item.liverarr[1] === null">
           <td>
-            Serum G.P.T(ALT): {{item.liverarr[1]}}</td>
+            Serum G.P.T(ALT): <span>{{item.liverarr[1]}}&nbsp;U/L(N: 7-40 U/L)</span></td>
         </div>
         <div [hidden]="item.liverarr[2] === null">
-          <td class="left">Total S. Bilirubin: {{item.liverarr[2]}}</td>
+          <td>Total S. Bilirubin: <span>{{item.liverarr[2]}}&nbsp;mg/dl(N: 0.2-1.0 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[3] === null">
-          <td class="left">Direct: {{item.liverarr[3]}}</td>
+          <td>Direct: <span>{{item.liverarr[3]}}&nbsp;mg/dl(N: 0.2-0.4 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[4] === null">
-          <td class="left">Indirect: {{item.liverarr[4]}}</td>
+          <td>Indirect: <span>{{item.liverarr[4]}}&nbsp;mg/dl(N: 0.2-0.6 mg/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[5] === null">
-          <td class="left">S. Alk Phosphatase: {{item.liverarr[5]}}</td>
+          <td>S. Alk Phosphatase: <span>{{item.liverarr[5]}} &nbsp;IU/L</span></td>
         </div>
         <div [hidden]="item.liverarr[6] === null">
-          <td class="left"> S. Total Proteins: {{item.liverarr[6]}}</td>
+          <td> S. Total Proteins: <span>{{item.liverarr[6]}}&nbsp;G/dl (N: 6.0-8.0 G/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[7] === null">
-          <td class="left"> Albumin: {{item.liverarr[7]}}</td>
+          <td> Albumin: <span>{{item.liverarr[7]}}&nbsp;G/dl (N: 3.8-5.0 G/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[8] === null">
-          <td class="left">Globulin: {{item.liverarr[8]}}</td>
+          <td>Globulin: <span>{{item.liverarr[8]}}&nbsp;G/dl (N: 2.3-3.5 G/dl)</span></td>
         </div>
         <div [hidden]="item.liverarr[9] === null">
-          <td class="left">AG RATIO: {{item.liverarr[9]}}</td>
+          <td>AG RATIO: <span>{{item.liverarr[9]}}&nbsp; (N: 2.1-1.0)</span></td>
         </div>
       </tr>
     </table>
@@ -173,25 +185,25 @@
   <div *ngIf="renalBool" style="text-align: center;">
     <br> <strong>RENAL FUNCTION TEST</strong>
     <table>
-      <tr class="left" *ngFor="let item of renalArr">
+      <tr *ngFor="let item of renalArr">
 
         <div [hidden]="item.renalarr[0] === null">
-          <td class="left">  Blood Urea: {{item.renalarr[0]}} </td>
+          <td> Blood Urea: <span>{{item.renalarr[0]}}&nbsp;mg/dl (N: 15-45 mg/dl)</span> </td>
         </div>
         <div [hidden]="item.renalarr[1] === null">
-          <td>S. Creatinine: {{item.renalarr[1]}}</td>
+          <td>S. Creatinine: <span>{{item.renalarr[1]}}&nbsp;mg/dl (N: 0.2-1.6 mg/dl)</span></td>
         </div>
         <div [hidden]="item.renalarr[2] === null">
-          <td class="left">S. Uric Acid: {{item.renalarr[2]}}</td>
+          <td>S. Uric Acid: <span>{{item.renalarr[2]}}&nbsp;mg/dl (N: 2.0-6.0 mg/dl)</span></td>
         </div>
         <div [hidden]="item.renalarr[3] === null">
-          <td class="left">S. Phosphorus: {{item.renalarr[3]}}</td>
+          <td>S. Phosphorus: <span>{{item.renalarr[3]}}&nbsp;mg/dl (N: 2.5-4.5 mg/dl)</span></td>
         </div>
         <div [hidden]="item.renalarr[4] === null">
-          <td class="left">S. Calcium: {{item.renalarr[4]}}</td>
+          <td>S. Calcium: <span>{{item.renalarr[4]}}&nbsp;mg/dl (N: 8-10 mg/dl)</span></td>
         </div>
         <div [hidden]="item.renalarr[5] === null">
-          <td class="left">S. Magnesium: {{item.renalarr[5]}}</td>
+          <td>S. Magnesium: <span>{{item.renalarr[5]}}&nbsp;M mol/l (N: 0.73-1.06 M mol/l)</span></td>
         </div>
       </tr>
     </table>
@@ -201,206 +213,206 @@
   <div *ngIf="serumBool" style="text-align: center;">
     <br> <strong>SERUM ELECTROLYTES</strong>
     <table>
-      <tr class="left" *ngFor="let item of serumArr">
+      <tr *ngFor="let item of serumArr">
 
         <div [hidden]="item.serumarr[0] === null">
-          <td class="left">  S. Sodium: {{item.serumarr[0]}} </td>
+          <td> S. Sodium: <span>{{item.serumarr[0]}}&nbsp;mmol/L (N: 136-145 mmol/L)</span> </td>
         </div>
         <div [hidden]="item.serumarr[1] === null">
-          <td>S. Potassium: {{item.serumarr[1]}}</td>
+          <td>S. Potassium: <span>{{item.serumarr[1]}}&nbsp;mmol/L (N: 3.5-5.1 mmol/L)</span></td>
         </div>
         <div [hidden]="item.serumarr[2] === null">
-          <td class="left">Magnesium: {{item.serumarr[2]}}</td>
+          <td>Magnesium: <span>{{item.serumarr[2]}}&nbsp;mmol/L (N: 0.73-1.06 mmol/L)</span></td>
         </div>
         <div [hidden]="item.serumarr[3] === null">
-          <td class="left">Phosphorus: {{item.serumarr[3]}}</td>
+          <td>Phosphorus: <span>{{item.serumarr[3]}}&nbsp;mmol/L (N: 2.3-4.7 mmol/L)</span></td>
         </div>
         <div [hidden]="item.serumarr[4] === null">
-          <td class="left">S. Calcium: {{item.serumarr[4]}}</td>
+          <td>S. Calcium: <span>{{item.serumarr[4]}}&nbsp;mg% (N: 8-10 mg%)</span></td>
         </div>
         <div [hidden]="item.serumarr[5] === null">
-          <td class="left">Chloride: {{item.serumarr[5]}}</td>
+          <td>Chloride: <span>{{item.serumarr[5]}}&nbsp;mmol/L (N: 97-111 mmol/L)</span></td>
         </div>
       </tr>
     </table>
   </div>
 
-<!-- SEROLOGICAL TEST -->
-<div *ngIf="serolBool" style="text-align: center;">
-  <strong> SEROLOGICAL TEST</strong>
-  <table>
-    <tr class="left" *ngFor="let item of serolArr">
+  <!-- SEROLOGICAL TEST -->
+  <div *ngIf="serolBool" style="text-align: center;"> <br>
+    <strong> SEROLOGICAL TEST</strong>
+    <table>
+      <tr *ngFor="let item of serolArr">
 
-      <div [hidden]="item.serolarr[0] === null">
-        <td class="left">HIV: {{item.serolarr[0]}} </td>
-      </div>
-      <div [hidden]="item.serolarr[1] === null">
-        <td class="left">HCV: {{item.serolarr[1]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[2] === null">
-        <td class="left">Australia Antigen (Hbs Ag): {{item.serolarr[2]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[3] === null">
-        <td class="left">VDRL: {{item.serolarr[3]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[4] === null">
-        <td class="left">C-RP: {{item.serolarr[4]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[5] === null">
-        <td class="left">R.A. Factor: {{item.serolarr[5]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[6] === null">
-        <td class="left">Mantoux Test: {{item.serolarr[6]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[7] === null">
-        <td class="left">1g G: {{item.serolarr[7]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[8] === null">
-        <td class="left">1g M: {{item.serolarr[8]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[9] === null">
-        <td class="left">1g G: {{item.serolarr[9]}}</td>
-      </div>
-      <div [hidden]="item.serolarr[10] === null">
-        <td class="left">1g M: {{item.serolarr[10]}}</td>
-      </div>
-    </tr>
-  </table>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <div [hidden]="item.serolarr[0] === null">
+          <td>HIV: <span>{{item.serolarr[0]}}</span> </td>
+        </div>
+        <div [hidden]="item.serolarr[1] === null">
+          <td>HCV: <span>{{item.serolarr[1]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[2] === null">
+          <td>Australia Antigen (Hbs Ag): <span>{{item.serolarr[2]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[3] === null">
+          <td>VDRL: <span>{{item.serolarr[3]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[4] === null">
+          <td>C-RP: <span>{{item.serolarr[4]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[5] === null">
+          <td>R.A. Factor: <span>{{item.serolarr[5]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[6] === null">
+          <td>Mantoux Test: <span>{{item.serolarr[6]}}&nbsp;mm (Dia: mm with 10U.PPD)</span></td>
+        </div>
+        <div [hidden]="item.serolarr[7] === null">
+          <td>1g G: <span>{{item.serolarr[7]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[8] === null">
+          <td>1g M: <span>{{item.serolarr[8]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[9] === null">
+          <td>1g G: <span>{{item.serolarr[9]}}</span></td>
+        </div>
+        <div [hidden]="item.serolarr[10] === null">
+          <td>1g M: <span>{{item.serolarr[10]}}</span></td>
+        </div>
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    </table>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <!--URINE EXAMINATION REPORT-->
   <div *ngIf="urineBool" style="text-align: center;">
     <br> <strong>URINE EXAMINATION REPORT</strong>
     <table>
-      <tr class="left" *ngFor="let item of urineArr">
+      <tr *ngFor="let item of urineArr">
         <div [hidden]="item.urinearr[0] === null">
-          <td class="left"> <strong> Physical Examination</strong></td> <br>
-          <td class="left">  Volume: {{item.urinearr[0]}} </td>
+          <td> <strong> Physical Examination</strong></td> <br>
+          <td> Volume: <span>{{item.urinearr[0]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[1] === null">
-          <td class="left">Reaction: {{item.urinearr[1]}}</td>
+          <td>Reaction: <span>{{item.urinearr[1]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[2] === null">
-          <td class="left">Colour: {{item.urinearr[2]}}</td>
+          <td>Colour: <span>{{item.urinearr[2]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[3] === null">
-          <td class="left">Sugar: {{item.urinearr[3]}}</td>
+          <td>Sugar: <span>{{item.urinearr[3]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[4] === null">
-          <td class="left">Turbidity: {{item.urinearr[4]}}</td>
+          <td>Turbidity: <span>{{item.urinearr[4]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[5] === null">
-          <td class="left">Albumin: {{item.urinearr[5]}}</td>
+          <td>Albumin: <span>{{item.urinearr[5]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[6] === null">
-          <td class="left">Deposit: {{item.urinearr[6]}}</td>
+          <td>Deposit: <span>{{item.urinearr[6]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[7] === null">
-          <td class="left">Acetone: {{item.urinearr[7]}}</td>
+          <td>Acetone: <span>{{item.urinearr[7]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[8] === null">
-          <td class="left">Odour: {{item.urinearr[8]}}</td>
+          <td>Odour: <span>{{item.urinearr[8]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[9] === null">
-          <td class="left">Urobilinogen: {{item.urinearr[9]}}</td>
+          <td>Urobilinogen: <span>{{item.urinearr[9]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[10] === null">
-          <td class="left">Specific Gravity: {{item.urinearr[10]}}</td>
+          <td>Specific Gravity: <span>{{item.urinearr[10]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[11] === null">
-          <td class="left">Bile Pigments: {{item.urinearr[11]}}</td>
+          <td>Bile Pigments: <span>{{item.urinearr[11]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[12] === null">
-          <td class="left">Bile Salts: {{item.urinearr[12]}}</td>
+          <td>Bile Salts: <span>{{item.urinearr[12]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[13] === null">
-          <td class="left">HPF: {{item.urinearr[13]}}</td>
+          <td>HPF: <span>{{item.urinearr[13]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[14] === null">
-          <td class="left">RBSs: {{item.urinearr[14]}}</td>
+          <td>RBSs: <span>{{item.urinearr[14]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[15] === null">
-          <td class="left">Leucocytes/Plus Cells: {{item.urinearr[15]}}</td>
+          <td>Leucocytes/Plus Cells: <span>{{item.urinearr[15]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[16] === null">
-          <td class="left">Epithelial Cells: {{item.urinearr[16]}}</td>
+          <td>Epithelial Cells: <span>{{item.urinearr[16]}}</span></td>
         </div>
         <div [hidden]="item.urinearr[17] === null">
-          <td class="left">Others: {{item.urinearr[17]}}</td>
+          <td>Others: <span>{{item.urinearr[17]}}</span></td>
         </div>
       </tr>
     </table>
   </div>
 
-   <!-- SEMEN EXAMINATION REPORT-->
-   <div *ngIf="semenBool" style="text-align: center;">
+  <!-- SEMEN EXAMINATION REPORT-->
+  <div *ngIf="semenBool" style="text-align: center;">
     <br> <strong>SEMEN EXAMINATION REPORT</strong>
     <table>
-      <tr class="left" *ngFor="let item of semenArr">
+      <tr *ngFor="let item of semenArr">
         <div [hidden]="item.semenarr[0] === null">
-          <td class="left">  Quantity: {{item.semenarr[0]}} </td>
+          <td> Quantity: <span>{{item.semenarr[0]}}</span> </td>
         </div>
         <div [hidden]="item.semenarr[1] === null">
-          <td class="left">Appearance: {{item.semenarr[1]}}</td>
+          <td>Appearance: <span>{{item.semenarr[1]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[2] === null">
-          <td class="left">Liquefaction: {{item.semenarr[2]}}</td>
+          <td>Liquefaction: <span>{{item.semenarr[2]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[3] === null">
-          <td class="left">Reaction: {{item.semenarr[3]}}</td>
+          <td>Reaction: <span>{{item.semenarr[3]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[4] === null">
-          <td class="left">Active Sperm: {{item.semenarr[4]}}</td>
+          <td>Active Sperm: <span>{{item.semenarr[4]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[5] === null">
-          <td class="left">Dead Sperm: {{item.semenarr[5]}}</td>
+          <td>Dead Sperm: <span>{{item.semenarr[5]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[6] === null">
-          <td class="left">Slugish: {{item.semenarr[6]}}</td>
+          <td>Slugish: <span>{{item.semenarr[6]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[7] === null">
-          <td class="left">Epithelial Cell: {{item.semenarr[7]}}</td>
+          <td>Epithelial Cell: <span>{{item.semenarr[7]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[8] === null">
-          <td class="left">Pus Cells: {{item.semenarr[8]}}</td>
+          <td>Pus Cells: <span>{{item.semenarr[8]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[9] === null">
-          <td class="left">RBCs: {{item.semenarr[9]}}</td>
+          <td>RBCs: <span>{{item.semenarr[9]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[10] === null">
-          <td class="left">Any Other Abnormality: {{item.semenarr[10]}}</td>
+          <td>Any Other Abnormality: <span>{{item.semenarr[10]}}</span></td>
         </div>
         <div [hidden]="item.semenarr[11] === null">
-          <td class="left">Total Spermatic Count: {{item.semenarr[11]}}</td>
+          <td>Total Spermatic Count: <span>{{item.semenarr[11]}}/ml</span></td>
         </div>
       </tr>
     </table>
