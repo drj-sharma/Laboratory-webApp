@@ -21,6 +21,8 @@ export class PrintdataComponent implements OnInit {
   bloodArr: any[];
   semenArr: any[];
   serolArr: any[];
+  otherArr: any[];
+  stoolArr: any[];
 
   haemoBool = false;
   urineBool = false;
@@ -29,8 +31,12 @@ export class PrintdataComponent implements OnInit {
   renalBool = false;
   serumBool = false;
   bloodBool = false;
+  stoolBool = false;
   semenBool = false;
   serolBool = false;
+  otherBool = false;
+  widalBool = false;
+  sub1: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private _router: Router) { 
     if (sessionStorage.length === 0) {
@@ -40,7 +46,7 @@ export class PrintdataComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe((params: any) => {
+    this.sub1 = this.route.params.subscribe((params: any) => {
       this.id = params['id'];
       console.log(this.id);
     });
@@ -48,8 +54,8 @@ export class PrintdataComponent implements OnInit {
 
   }
 
-    fetchPatientbyid() {
-    this.http.get('http://localhost:3000/api/fetchpatientbyid?id=' + this.id, { responseType: 'json' }).subscribe(
+    async fetchPatientbyid() {
+      this.http.get('http://localhost:3000/api/fetchpatientbyid?id=' + this.id, { responseType: 'json' }).subscribe(
       (res: []) => {
         console.log(res);
         if (res.length > 0) {this.patients = res;
@@ -68,8 +74,7 @@ export class PrintdataComponent implements OnInit {
     this._router.navigate(['/main']);
   }
 
-  fetchHaemo() {
-    this.http.get('http://localhost:3000/api/haemo-rep?id=' + this.id, { responseType: 'json' }).subscribe(
+  fetchHaemo() {this.http.get('http://localhost:3000/api/haemo-rep?id=' + this.id, { responseType: 'json' }).subscribe(
       (res: []) => {
         console.log(res);
         if (res.length > 0) {
@@ -188,6 +193,21 @@ export class PrintdataComponent implements OnInit {
       },
       (err) => this.msg = err
     );
+    this.fetchStool();
+  }
+  fetchStool() {
+    this.http.get('http://localhost:3000/api/stool-rep?id=' + this.id, { responseType: 'json' }).subscribe(
+      (res: []) => {
+        console.log(res);
+        if (res.length > 0) {
+          this.stoolArr = res;
+          this.stoolBool = true;
+        } else {
+          this.stoolBool = false;
+        };
+      },
+      (err) => this.msg = err
+    );
     this.fetchSemen();
   }
   fetchSemen() {
@@ -203,10 +223,46 @@ export class PrintdataComponent implements OnInit {
       },
       (err) => this.msg = err
     );
+    this.fetchOther();
   }
+
+
+  fetchOther() {
+    function isNull(arr) {
+      for(let x of arr) {
+        if( x !== null) {
+          return true
+        }
+      }
+    }
+    this.http.get('http://localhost:3000/api/other-rep?id=' + this.id, { responseType: 'json' }).subscribe(
+      (res: []) => {
+        console.log(res);
+        if (res.length > 0) {
+          this.otherArr = res;
+          if (isNull(this.otherArr[0].otherarr)) {
+            this.otherBool = true;
+          }
+          if (isNull(this.otherArr[0].widalarr)) {
+            this.widalBool = true
+          } 
+        } else {
+          this.otherBool = false;
+          this.widalBool = false;
+        };
+      },
+      (err) => this.msg = err
+    );
+  }
+  
   // toCheck(arr) {
   //   let checker = arr.every(v => v === null);
   //   return checker;
   // }
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.sub1.unsubscribe();
+  }
 }
 

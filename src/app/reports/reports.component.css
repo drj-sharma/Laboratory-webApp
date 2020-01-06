@@ -148,3 +148,7 @@ strong {
   width: 100px;
   background-color: #555;
 }
+
+thead tr th {
+  width: 20px;
+}

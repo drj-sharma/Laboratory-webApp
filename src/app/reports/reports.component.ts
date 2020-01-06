@@ -79,9 +79,12 @@ export class ReportsComponent implements OnInit {
 
   u1: string;u2: string;u3: string;u4: string;u5: string;u6: string;u7: string;u8: string;u9: string;u10: string;u11: string;u12: string;u13: string;u14: string;u15: string;u16: string;u17: string;u18: string;
 
-  sr1: string;sr2: string;sr3: string;sr4: string;sr5: string;sr6: string;sr7: string;sr8: string;sr9: string;sr10: string;sr11: string;
+  sr1: string;sr2: string;sr3: string;sr4: string;
 
-  st1: string;st2: string;st3: string;st4: string;st5: string;st6: string;st7: string;st8: string;st9: string;st10: string;st11: string;st12: string;st13: string;st14: string;st15: string;st16: string;st17: string;st18: string;st19: string;st20: string;st21: string;st22: string;st23: string;st24: string;st25: string;st26: string;st27: string;st28: string;
+  o1: string;o2: string;o3: string;o4: string;o5: string;o6: string;o7: string;
+  st1: string;st2: string;st3:string;st4: string;st5: string;st6: string;st7: string;st8: string;st9: string;st10: string;st11: string;st12: string;st13: string;st14: string;st15: string;st16: string;st17: string;st18: string;st19: string;st20: string;st21: string;st22: string;st23: string;st24: string;st25: string;st26: string;st27: string;st28: string;
+
+  so1: string;so2: string;so3: string;so4: string;so5: string;so6: string;so7: string;so8: string;so9: string;so10: string;so11: string;so12: string;so13: string;so14: string;so15: string;so16: string;
 
   id: string;
   sub: any;
@@ -93,8 +96,10 @@ export class ReportsComponent implements OnInit {
   serumRep: string[];
   semenRep: string[];
   urineRep: string[];
+  stoolRep: string[];
   serolRep: string[];
-  serolWidalRep: string[];
+  otherRep: string[];
+  widalRep: string[];
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
@@ -193,12 +198,10 @@ export class ReportsComponent implements OnInit {
       );
   }
   onSub7() {
-    this.serolRep = [this.sr1, this.sr2, this.sr3, this.sr4, this.sr5, this.sr6, this.sr7, this.sr8, this.sr9, this.sr10, this.sr11];
-    this.serolWidalRep = [this.st1, this.st2, this.st3, this.st4, this.st5, this.st6, this.st7, this.st8, this.st9, this.st10, this.st11, this.st12, this.st13, this.st14, this.st15, this.st16, this.st17, this.st18, this.st19, this.st20, this.st21, this.st22, this.st23, this.st24, this.st25, this.st26, this.st27, this.st28 ]
+    this.serolRep = [this.sr1, this.sr2, this.sr3, this.sr4]
     const serol =  {
       id: this.id,
       sl: this.serolRep,
-      slwd: this.serolWidalRep
     };
     console.log(serol);
     this.http.post('http://localhost:3000/api/report-serol', serol, {responseType: 'text'}).subscribe(
@@ -218,6 +221,20 @@ export class ReportsComponent implements OnInit {
       (err) => console.log(err)
       );
   }
+  onSub9() {
+    this.otherRep = [this.o1, this.o2, this.o3, this.o4, this.o5, this.o6, this.o7];
+    this.widalRep = [this.st1, this.st2, this.st3, this.st4, this.st5, this.st6, this.st7, this.st8, this.st9, this.st10, this.st11, this.st12, this.st13, this.st14, this.st15, this.st16, this.st17, this.st18, this.st19, this.st20, this.st21, this.st22, this.st23, this.st24, this.st25, this.st26, this.st27, this.st28 ]
+    const other =  {
+      id: this.id,
+      ot: this.otherRep,
+      wd: this.widalRep
+    };
+    console.log(other);
+    this.http.post('http://localhost:3000/api/report-other', other, {responseType: 'text'}).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+      );
+  }
   onSub10() {
     this.semenRep = [this.sm1, this.sm2, this.sm3, this.sm4, this.sm5, this.sm6, this.sm7, this.sm8, this.sm9, this.sm10, this.sm11, this.sm12];
     const semen =  {
@@ -230,6 +247,19 @@ export class ReportsComponent implements OnInit {
       (err) => console.log(err)
       );
   }
+  onSub11() {
+    this.stoolRep = [this.so1, this.so2, this.so3, this.so4, this.so5, this.so6, this.so7, this.so8, this.so9, this.so10, this.so11, this.so12, this.so13, this.so14, this.so15, this.so16]
+    const stool =  {
+      id: this.id,
+      st: this.stoolRep,
+    };
+    console.log(stool);
+    this.http.post('http://localhost:3000/api/report-stool', stool, {responseType: 'text'}).subscribe(
+      (res)=> console.log(res),
+      (err) => console.log(err)
+      );
+  };
+  
 
 
   proceedId() {

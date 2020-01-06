@@ -14,7 +14,7 @@
     <div class="container">
         <form id="survey-form">
             <div class="form-group d-flex">
-            <h4>  <label for="patient" class="l1"> <strong> Name: </strong>&nbsp;</label></h4>
+            <h4>  <label for="patient" class="l1"> <strong>Patient's Name: </strong>&nbsp;</label></h4>
                 <input class="form-control" type="text" id="kname" name="pname" placeholder="Patient's Name" [(ngModel)]="name" >
             </div>
             
@@ -35,18 +35,18 @@
 <br>
             <div class="form-group d-flex">
                 <h4>  <label for="specimen" class="l1"> <strong>Specimen: </strong>&nbsp;</label></h4>
-                    <input class="form-control" id="specimen" type="text" id="name" name="spec" placeholder="Enter Specimen" [(ngModel)]="spec">
+                    <input class="form-control" id="specimen" type="text"  name="spec" placeholder="Enter Specimen" [(ngModel)]="spec">
                 </div>
 <br>
 
             <div class="form-group d-flex">
                 <h4>  <label for="srno" class="l1"> <strong>Phone no: </strong>&nbsp;</label></h4>
-                    <input class="form-control" id="srno" type="text" id="name" name="ph" placeholder="Enter Ph. No." [(ngModel)]="phNum">
+                    <input class="form-control" id="srno" type="text"  name="ph" placeholder="Enter Ph. No." [(ngModel)]="phNum">
                 </div>
             <br>
             <div class="form-group d-flex">
                 <h4>  <label for="refDr" class="l1"> <strong>Ref. By Dr: </strong>&nbsp;</label></h4>
-                    <input class="form-control" id="refDr" type="text" name="drname" id="name" placeholder="Dr. Name" [(ngModel)]="refdoc">
+                    <input class="form-control" id="refDr" type="text" name="drname"  placeholder="Dr. Name" [(ngModel)]="refdoc">
                 </div> <br>
             <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button> <br>
         </form>

@@ -16,7 +16,7 @@ table div td {
     /* float: left; */
     padding-left: 10px;
     width: 3%;
-    text-align: left;   
+    text-align: left;
 }
 
 
@@ -31,10 +31,21 @@ button {
 span {
     font-weight: bold;
     float: right;
-    width: 40%;
+    width: 35%;
 }
-@media print {
-    .hidden-print {
-      display: none !important;
-    }
+  /* thead tr td {
+    width: 20px;
+  } */
+/* 
+  table.fixed { table-layout:fixed;
+    border-collapse: collapse;
+    empty-cells: show; 
+} */
+  /* tabel.fixed th {
+    border-collapse: collapse;
+    border: solid 1px black;
   }
+table.fixed td {overflow: hidden;
+    width: 120px;
+    border: solid 1px;
+    text-align: center; } */
