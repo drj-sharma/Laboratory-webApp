@@ -12,22 +12,6 @@ app.use(async function (req, res, next) {
   next();
 });
 
-
-//Signup schema & model
-// var SignupSchema = new mongoose.Schema(
-//   {
-//     Name: String,
-//     Username: String,
-//     Password: String
-//   },
-//   {
-//     versionKey: false
-//   }
-// );
-// var Signup = mongoose.model("signup", SignupSchema,"signup");
-
-// patient
-
 var patientSchema = new mongoose.Schema(
   {
     Name: String,
@@ -37,7 +21,7 @@ var patientSchema = new mongoose.Schema(
     Specimen: String,
     Refdoc: String,
     Date: Date,
-    Reg: { type: Number, default: 100 }
+    Reg: Number
   },
   {
     versionKey: false
@@ -194,7 +178,7 @@ var dbURL = 'mongodb://localhost/labdb';
 mongoose.connect(dbURL, { useNewUrlParser: true });
 
 mongoose.connection.on('connected', function () {
-  console.log("Mongoose default connection is open to " + dbURL);
+  console.log("Server connection is established to " + dbURL);
 });
 
 mongoose.connection.on('error', function (err) {
@@ -202,7 +186,7 @@ mongoose.connection.on('error', function (err) {
 });
 
 mongoose.connection.on('disconnected', function () {
-  console.log("Mongoose default connection is disconnected");
+  console.log("connection is disconnected");
 });
 
 process.on('SIGINT', function () {
@@ -239,6 +223,7 @@ process.on('SIGINT', function () {
 app.post("/api/patientinfo", async function (req, res) {
   console.log(req.body);
   // mongoose.connect("mongodb://localhost/labdb", { useNewUrlParser: true , poolSize: 10});
+ 
   var newpatient = new patientinfo(
     {
       Name: req.body.nm,
@@ -247,12 +232,12 @@ app.post("/api/patientinfo", async function (req, res) {
       Phone: req.body.ph,
       Specimen: req.body.speci,
       Refdoc: req.body.ref,
-      Date: Date.now(),
       Reg: req.body.reg,
-      // heamaArr: req.body.heamaR
+      Date: Date.now(),
     });
 
-  newpatient.save(function (err) {
+
+  newpatient.save( function (err) {
     if (err) {
       console.log(err);
       res.send(" Error while saving");
@@ -263,6 +248,7 @@ app.post("/api/patientinfo", async function (req, res) {
     ;
   // mongoose.connection.close();
 });
+
 
 
 // save report-haemotology of patients
@@ -286,6 +272,7 @@ app.post("/api/report-haemo", async function (req, res) {
     ;
   // mongoose.connection.close();
 });
+
 
 // save report-urine of patients
 app.post("/api/report-blood", async function (req, res) {
@@ -748,15 +735,15 @@ app.get("/api/other-rep", async function (req, res) {
   // mongoose.connection.close();
 });
 // search patient
-app.get("/api/fetchPatientbyname", function (req, res) {
+app.get("/api/fetchPatientbyreg", function (req, res) {
   // mongoose.connect("mongodb://localhost/labdb");
   console.log(req.query);
 
   // db.users.find(name: new RegExp(search));
   // ({name: { $regex: '.' + name + '.' } }).limit(5);
 
-  var pname = req.query.querysearch;
-  patientinfo.find({ Name: { $regex: '.*' + pname, $options: 'i' } }, function (err, data) {
+  var preg = req.query.querysearch;
+  patientinfo.find({ Reg: preg }, function (err, data) {
     if (err) {
       console.log(err);
       res.send("No result found");

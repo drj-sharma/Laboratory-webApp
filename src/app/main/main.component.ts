@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
   d = new Date();
+  reg: number;
   name: string;
   spec: string;
   age: number;
@@ -29,6 +30,7 @@ export class MainComponent implements OnInit {
 
   onSubmit() {
     const params = {
+      reg: this.reg,
       nm: this.name,
       age: this.age,
       ph: this.phNum,

@@ -5,7 +5,7 @@
 <table>
     <thead>
       <tr>
-        <th scope="col">S. No</th>
+        <th scope="col">Reg no.</th>
         <th scope="col">Patient's Name</th>
         <th scope="col">Age</th>
         <th scope="col">Gender</th>
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of patients;let i = index">
-        <td data-label="index">{{i + 1}}</td>
+        <td data-label="index">{{item.Reg}}</td>
         <td data-label="Name">{{item.Name| titlecase}}</td>
         <td data-label="Sex">{{item.Age}}</td>
         <td data-label="Sex">{{item.Sex| titlecase}}</td>

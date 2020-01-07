@@ -18,7 +18,7 @@ export class SearchpatientComponent implements OnInit {
   ngOnInit() {
   }
   searchPatient() {
-    this.http.get('http://localhost:3000/api/fetchPatientbyname?querysearch='+ this.pname.toLowerCase(), {responseType: 'json'}).subscribe(
+    this.http.get('http://localhost:3000/api/fetchPatientbyreg?querysearch='+ this.pname.toLowerCase(), {responseType: 'json'}).subscribe(
       (res: any[]) => {
         if (res.length > 0) {
           this.searchedPatient = res;

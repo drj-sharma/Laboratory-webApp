@@ -1,7 +1,7 @@
 <div class="container">
     <form class="example-form-width">
         <mat-form-field class="example-full-width">
-          <input matInput #message maxlength="256" placeholder="Enter Patient's Name" name="pname" [(ngModel)]="pname">
+          <input matInput #message maxlength="256" placeholder="Enter Reg No." name="pname" [(ngModel)]="pname">
         </mat-form-field>
          <mat-icon (click)="searchPatient()">search</mat-icon>
       </form>
@@ -12,6 +12,7 @@
     <thead>
       <tr>
         <th scope="col">S. No</th>
+        <th scope="col">Reg No.</th>
         <th scope="col">Patient's Name</th>
         <th scope="col">Age</th>
         <th scope="col">Gender</th>
@@ -24,6 +25,7 @@
     <tbody>
       <tr *ngFor="let item of searchedPatient;let i = index">
         <td data-label="index">{{i + 1}}</td>
+        <td data-label="Name">{{item.Reg}}</td>
         <td data-label="Name">{{item.Name| titlecase}}</td>
         <td data-label="Sex">{{item.Age}}</td>
         <td data-label="Sex">{{item.Sex| titlecase}}</td>

@@ -20,8 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
-
-    if (this.username === 'manish@gmail.com' && this.password === 'manish123') {
+    if (this.username === 'mklabs8146@gmail.com' && this.password === 'admin8146') {
       this.router.navigateByUrl('/main');
       sessionStorage.setItem('nm', 'admin');
     } else {
