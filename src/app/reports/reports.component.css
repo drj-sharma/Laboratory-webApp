@@ -152,3 +152,7 @@ strong {
 thead tr th {
   width: 20px;
 }
+.reports {
+  height: auto;
+  background: linear-gradient(to right top, #70e1f5, #ffd194);
+}

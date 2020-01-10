@@ -13,7 +13,6 @@ import { AboutComponent } from './about/about.component';
 import { PrintdataComponent } from './printdata/printdata.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatTableModule } from '@angular/material';
-import { PatientreportComponent } from './patientreport/patientreport.component';
 import { HeaderComponent } from './header/header.component';
 import { ReportsComponent } from './reports/reports.component';
 @NgModule({
@@ -25,7 +24,6 @@ import { ReportsComponent } from './reports/reports.component';
     AllpatientComponent,
     AboutComponent,
     PrintdataComponent,
-    PatientreportComponent,
     HeaderComponent,
     ReportsComponent
   ],

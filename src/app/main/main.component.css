@@ -27,13 +27,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-#showcase {
-    height: 100vh;
-    background: linear-gradient(-30deg, #3a41d6, #6a359c);
-}
-
 .marginTop {
   margin-top: 50px;
 }
@@ -68,17 +61,6 @@ body {
 	margin:0;
 	padding:0;
 }
-
-body{
-	font-family:'Tahoma', sans-serif;
-	color:#666;
-	font-size:16px;
-	background:#f9f9f9;
-	line-height:1.6em;
-    width: 100%;
-}
-
-
 
 input[type=text], select, textarea {
   padding: 6px;
@@ -118,4 +100,7 @@ button {
 }
 form {
   margin-left: 140px;
+}
+.home {
+  background: linear-gradient(to right top, #70e1f5, #ffd194);
 }
